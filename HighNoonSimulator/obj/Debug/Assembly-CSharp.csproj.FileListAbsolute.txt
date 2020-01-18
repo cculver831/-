@@ -1,0 +1,2 @@
+C:\Users\Chloe Culver\Desktop\HighNoonSim\HighNoonSimulator\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\Chloe Culver\Desktop\HighNoonSim\HighNoonSimulator\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
