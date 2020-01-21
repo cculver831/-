@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerLook : MonoBehaviour
+using Photon.Pun;
+using Photon.Realtime;
+public class PlayerLook : MonoBehaviourPunCallbacks
 {
     [SerializeField] private string MouseXInputname, MouseYInputname;
     [SerializeField] private float mouseSensitivity;
@@ -14,8 +15,17 @@ public class PlayerLook : MonoBehaviour
 
     private void Awake()
     {
-        LockCursor();
-        xAxisClamp = 0.0f;
+        
+        if (photonView.IsMine)
+        {
+            LockCursor();
+            xAxisClamp = 0.0f;
+        }
+        else
+        {
+
+
+        }
     }
     private void LockCursor()
     {

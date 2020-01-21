@@ -45,7 +45,7 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
         {
             Debug.Log(Hit.transform.name);
             //Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
-            Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 10f);
+            Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 5f);
         }
     }
 }

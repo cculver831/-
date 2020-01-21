@@ -20,6 +20,7 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
         DeathCam.gameObject.SetActive(false);
         PlayerAnim = gameObject.GetComponent<Animator>();
     }
+    [PunRPC]
     void Update()
     {
        if(enemyHealth <= 0)

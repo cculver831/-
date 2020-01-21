@@ -120,6 +120,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   ObservedComponents:
   - {fileID: 3052846621723498351}
+  - {fileID: 9159992060785636741}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -198,6 +199,33 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
+--- !u!114 &9159992060785636741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3162649352784235615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: Idle
+  - Type: 4
+    SynchronizeType: 2
+    Name: Dying
+  - Type: 4
+    SynchronizeType: 2
+    Name: Running
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1001 &2239812178657267494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -324,11 +352,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3167924139454058867}
     m_Modifications:
-    - target: {fileID: 5070297668094978806, guid: 418c589e199d17d418a45bbd7f4ea009,
-        type: 3}
-      propertyPath: m_Name
-      value: Camera (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 7283421699359769830, guid: 418c589e199d17d418a45bbd7f4ea009,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -383,6 +406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070297668094978806, guid: 418c589e199d17d418a45bbd7f4ea009,
+        type: 3}
+      propertyPath: m_Name
+      value: Camera (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4721271752844526729, guid: 418c589e199d17d418a45bbd7f4ea009,
         type: 3}
