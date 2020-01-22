@@ -16,16 +16,13 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     private void Awake()
     {
         
-        if (photonView.IsMine)
+  
+        if(photonView.IsMine)
         {
             LockCursor();
             xAxisClamp = 0.0f;
         }
-        else
-        {
-
-
-        }
+        
     }
     private void LockCursor()
     {
@@ -33,7 +30,11 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     }
     private void Update()
     {
-        CameraRotation();
+        if (photonView.IsMine)
+        {
+            CameraRotation();
+        }
+        
     }
     private void CameraRotation()
     {
