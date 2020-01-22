@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8016811912649975217}
   - component: {fileID: 6250170726286863916}
   - component: {fileID: 4721271752844526729}
+  - component: {fileID: 4265620530444796431}
   m_Layer: 0
   m_Name: Camera (1)
   m_TagString: Untagged
@@ -101,6 +102,44 @@ MonoBehaviour:
   MouseYInputname: Mouse Y
   mouseSensitivity: 100
   playerBody: {fileID: 0}
+--- !u!114 &4265620530444796431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070297668094978806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 0
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 0}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!111 &1832177006115908335
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9072309265906280844}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 879e83f48e09d624bbd4a86f8aae6b9f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 879e83f48e09d624bbd4a86f8aae6b9f, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!82 &3055740132744122074
 AudioSource:
   m_ObjectHideFlags: 0
@@ -197,22 +236,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!111 &1832177006115908335
-Animation:
+--- !u!114 &295764203796736903
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9072309265906280844}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 879e83f48e09d624bbd4a86f8aae6b9f, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 879e83f48e09d624bbd4a86f8aae6b9f, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe2349784b5f1841a6937a43f6ecc8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8391835568939278646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,18 +261,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 5
---- !u!114 &295764203796736903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9072309265906280844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afe2349784b5f1841a6937a43f6ecc8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  fireRate: 0.25
+  weaponRange: 50
+  ammo: 6
 --- !u!1001 &9070699573262275268
 PrefabInstance:
   m_ObjectHideFlags: 0

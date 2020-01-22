@@ -15,14 +15,10 @@ public class PlayerLook : MonoBehaviourPunCallbacks
 
     private void Awake()
     {
-        
-  
-        if(photonView.IsMine)
-        {
+    
             LockCursor();
             xAxisClamp = 0.0f;
-        }
-        
+   
     }
     private void LockCursor()
     {

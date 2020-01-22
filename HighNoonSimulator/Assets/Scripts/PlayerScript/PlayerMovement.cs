@@ -40,8 +40,10 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        _PlayerMovement();
-        JumpInput();
+
+            _PlayerMovement();
+            JumpInput();
+
     }
 
     private void _PlayerMovement()

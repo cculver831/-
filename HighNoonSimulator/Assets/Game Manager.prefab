@@ -172,8 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerModels:
+  - {fileID: 6780905014606407755, guid: 6094bd2a47325b947bb2f77194959b62, type: 3}
   - {fileID: 6347762747413329873, guid: e203b6b906ada6741b261a216bf0c8ca, type: 3}
-  - {fileID: 6781431133601394118, guid: 6094bd2a47325b947bb2f77194959b62, type: 3}
   - {fileID: 2819397131771356955, guid: 4402e7e1ddce83a448b78f8749064c8c, type: 3}
   - {fileID: 5773938283665871153, guid: 0e85ddd1b674f8a4b87279de73ea367c, type: 3}
   - {fileID: 4189866394189817535, guid: 16cc8cb5ae7497a47bb82f8b09186816, type: 3}
