@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         _MenuManager.Offline = Offline;
         //Check if arena is loaded in
         Debug.Log("Done: " + done);
-        Debug.Log("Offline: " + Offline);
+        Debug.Log("Gamemanager Offline: " + Offline);
         SceneManager.sceneLoaded += OnSceneLoaded;
         if (Offline == true)
         {

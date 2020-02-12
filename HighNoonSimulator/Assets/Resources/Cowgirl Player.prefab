@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyHealth: 10
   DeathCam: {fileID: 259894010}
-  Cam: {fileID: 4947143796997769752}
+  Cam: {fileID: 3163399300085147707}
   PlayerUI: {fileID: 6533834670046041330, guid: fb4d33c1cb139324abc7990b38d6bd0b,
     type: 3}
 --- !u!114 &1864728055363397352
@@ -182,7 +182,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMulti: 4.5
   jumpKey: 32
-  PlayerUI: {fileID: 170056, guid: e41946a981c3b444a84d15eb7c608ca4, type: 3}
+  PlayerUI: {fileID: 6533834670046041329, guid: fb4d33c1cb139324abc7990b38d6bd0b,
+    type: 3}
   Manager: {fileID: 781338521982725033, guid: 48ea57c92eca93a4bb6a93e7cf8a2453, type: 3}
 --- !u!114 &3052846621723498351
 MonoBehaviour:
@@ -419,7 +420,7 @@ PrefabInstance:
       objectReference: {fileID: 3167924139454058867}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 418c589e199d17d418a45bbd7f4ea009, type: 3}
---- !u!20 &4947143796997769752 stripped
+--- !u!20 &3163399300085147707 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 8016811912649975217, guid: 418c589e199d17d418a45bbd7f4ea009,
     type: 3}

@@ -40,6 +40,11 @@ public class MenuManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void Update()
+    {
+        Debug.Log("Game Mansger reports: " + Manager.Offline);
+        Debug.Log("Menu  reports: " + Offline);
+    }
     //Play Main
     public void Play()
     {
@@ -50,7 +55,7 @@ public class MenuManager : MonoBehaviour
     {
         PhotonNetwork.Disconnect();
         Manager.Offline = true;
-        Debug.Log("Game Msnsger reports: " + Manager.Offline);
+        Debug.Log("Game Mansger reports: " + Manager.Offline);
         Offline = true;
         Camera.Play("Camera_Pan");
         StartCoroutine(ChangeMenu());
@@ -58,6 +63,7 @@ public class MenuManager : MonoBehaviour
     }
     public void PlayOnline()
     {
+        Manager.Offline = false;
         Offline = false;
         Camera.Play("Camera_Pan");
         StartCoroutine(ChangeMenu());
@@ -67,7 +73,7 @@ public class MenuManager : MonoBehaviour
     public void SelectButton()
     {
        
-        if(Offline == false)
+        if(!Manager.Offline)
         {
             Status.SetActive(true);
             Camera.SetBool("Selected", true);
@@ -135,13 +141,19 @@ public class MenuManager : MonoBehaviour
 
 
     }
+    // Start Game Level Fade
+    public void StartGame()
+    {
+        CreateRoom.SetActive(false);
+        Status.SetActive(false);
+    }
 
-    ///Fade Sequence for Tutorial
+    //Fade Sequence for Tutorial
 
     public void FadeStart()
     {
         StartCoroutine(TutorialChange());
-       
+        StopCoroutine(TutorialChange());
     }
 
     IEnumerator TutorialChange()

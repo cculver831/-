@@ -302,7 +302,8 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerUI
       value: 
-      objectReference: {fileID: 170056, guid: e41946a981c3b444a84d15eb7c608ca4, type: 3}
+      objectReference: {fileID: 6533834670046041329, guid: fb4d33c1cb139324abc7990b38d6bd0b,
+        type: 3}
     - target: {fileID: 4784909567389302467, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
       propertyPath: Manager

@@ -61,8 +61,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
         float horizInput = Input.GetAxis(horizontalInputName) * movementspeed;
 
         float vertInput = Input.GetAxis(verticalInputName) * movementspeed;
-        Debug.Log("Horzontal Input: " + horizInput);
-        Debug.Log("Vertical Input: " + vertInput);
+  
         Vector3 forwardMovement = transform.forward * vertInput;
         Vector3 rightMovement = transform.right * horizInput;
 
