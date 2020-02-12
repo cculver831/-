@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     [SerializeField] private KeyCode jumpKey;
     public GameObject PlayerUI; 
     private Animator Player;
-
+    private GameManager Manager;
     private bool isJumping;
 
     private CharacterController charController;
@@ -24,15 +24,25 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     {
         charController = GetComponent<CharacterController>();
         Player = GetComponent<Animator>();
-        if(photonView.IsMine)
+        if(PhotonNetwork.IsConnected)
         {
-            GameObject PlayerUIGO = Instantiate(PlayerUI);
+            Debug.Log("Connected, hoe");
+            if (photonView.IsMine)
+            {
+                GameObject PlayerUIGO = Instantiate(PlayerUI);
+            }
+            else
+            {
+                charController.enabled = false;
+
+            }
         }
         else
         {
-            charController.enabled = false;
-            
+            GameObject PlayerUIGO = Instantiate(PlayerUI);
+            charController.enabled = true;
         }
+    
     }
     // Start is called before the first frame update
 

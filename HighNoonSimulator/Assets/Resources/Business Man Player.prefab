@@ -209,7 +209,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMulti: 4.5
   jumpKey: 32
-  PlayerUI: {fileID: 0}
+  PlayerUI: {fileID: 170056, guid: e41946a981c3b444a84d15eb7c608ca4, type: 3}
 --- !u!114 &5716523905737784424
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -380,7 +380,8 @@ MonoBehaviour:
   enemyHealth: 10
   DeathCam: {fileID: 389760714}
   Cam: {fileID: 1374220648}
-  PlayerUI: {fileID: 0}
+  PlayerUI: {fileID: 6533834670046041330, guid: fb4d33c1cb139324abc7990b38d6bd0b,
+    type: 3}
 --- !u!114 &1934789907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,7 +423,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMulti: 4.5
   jumpKey: 32
-  PlayerUI: {fileID: 0}
+  PlayerUI: {fileID: 170056, guid: e41946a981c3b444a84d15eb7c608ca4, type: 3}
 --- !u!114 &2590691206421629216
 MonoBehaviour:
   m_ObjectHideFlags: 0

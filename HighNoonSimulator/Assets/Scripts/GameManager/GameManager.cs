@@ -8,14 +8,17 @@ using Photon.Realtime;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager Instance;
+    public MenuManager _MenuManager;
     public GameObject[] PlayerModels;
     public static int count;
     private bool done = false;
+    public bool Offline;
     public AudioSource AudioManager;
     public GameObject[] Spawnloc = new GameObject[4];
 
     void Awake()
     {
+        _MenuManager.Offline = Offline;
         //Singleton 
         if (Instance == null)
         {
@@ -30,8 +33,18 @@ public class GameManager : MonoBehaviourPunCallbacks
     private void Update()
     {
         //Check if arena is loaded in
+        
         SceneManager.sceneLoaded += OnSceneLoaded;
+        if (_MenuManager.Offline == true)
+        {
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main") && done == false)
+            {
+                int newpoint = Random.Range(-6, 6);
+                Instantiate(PlayerModels[count], new Vector3(newpoint, 0f, newpoint), Quaternion.identity);
+                done = true;
 
+            }
+        }
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {

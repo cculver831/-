@@ -6,8 +6,10 @@ using Photon.Pun;
 using Photon.Realtime;
 public class MenuManager : MonoBehaviour
 {
+    public static MenuManager Instance;
     public static bool PlayerSelect = false;
     public GameObject PlayerS;
+    public GameObject GameMode;
     public GameObject optionsUI;
     public GameObject Lobby;
     public GameObject Main_Menu;
@@ -17,16 +19,41 @@ public class MenuManager : MonoBehaviour
     public GameObject RoomList;
     public GameObject InputFields;
     public static bool MainM = true;
+    public bool Offline;
     private Animator Camera;
     public GameObject Cam;
     private void Start()
     {
         Cam = GameObject.Find("Main Camera");
         Camera = Cam.GetComponent<Animator>();
+        //Singleton 
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
     //Play Main
     public void Play()
     {
+        GameMode.SetActive(true);
+        Main_Menu.SetActive(false);
+    }
+    public void PlayOffline()
+    {
+        PhotonNetwork.Disconnect();
+        Offline = true;
+        Camera.Play("Camera_Pan");
+        StartCoroutine(ChangeMenu());
+        StopCoroutine(ChangeMenu());
+    }
+    public void PlayOnline()
+    {
+        Offline = true;
         Camera.Play("Camera_Pan");
         StartCoroutine(ChangeMenu());
         StopCoroutine(ChangeMenu());
@@ -34,10 +61,20 @@ public class MenuManager : MonoBehaviour
     // Player Select Change
     public void SelectButton()
     {
-        Camera.SetBool("Selected", true);
-        StartCoroutine(PlayerSelectButton());
-        StopCoroutine(PlayerSelectButton());
-        Status.SetActive(true);
+       
+        if(Offline == false)
+        {
+            Status.SetActive(true);
+            Camera.SetBool("Selected", true);
+            StartCoroutine(PlayerSelectButton());
+            StopCoroutine(PlayerSelectButton());
+        }
+        else
+        {
+            PlayerS.SetActive(false);
+            SceneManager.LoadScene("Main");
+        }
+        
     }
     public void Quit()
     {
@@ -86,7 +123,8 @@ public class MenuManager : MonoBehaviour
     //Change from Main to Player Select
     IEnumerator ChangeMenu()
     {
-        Main_Menu.SetActive(false);
+     //   Main_Menu.SetActive(false);
+        GameMode.SetActive(false);
         yield return new WaitForSeconds(3);
         PlayerS.SetActive(true);
 

@@ -182,8 +182,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMulti: 4.5
   jumpKey: 32
-  PLayerUI: {fileID: 6533834670046041329, guid: fb4d33c1cb139324abc7990b38d6bd0b,
-    type: 3}
+  PlayerUI: {fileID: 170056, guid: e41946a981c3b444a84d15eb7c608ca4, type: 3}
 --- !u!114 &3052846621723498351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +351,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3167924139454058867}
     m_Modifications:
+    - target: {fileID: 5070297668094978806, guid: 418c589e199d17d418a45bbd7f4ea009,
+        type: 3}
+      propertyPath: m_Name
+      value: Camera (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 7283421699359769830, guid: 418c589e199d17d418a45bbd7f4ea009,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -406,11 +410,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5070297668094978806, guid: 418c589e199d17d418a45bbd7f4ea009,
-        type: 3}
-      propertyPath: m_Name
-      value: Camera (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4721271752844526729, guid: 418c589e199d17d418a45bbd7f4ea009,
         type: 3}

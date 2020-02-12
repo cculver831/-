@@ -26,10 +26,9 @@ public class PlayerLook : MonoBehaviourPunCallbacks
     }
     private void Update()
     {
-        if (photonView.IsMine)
-        {
+     
             CameraRotation();
-        }
+        
         
     }
     private void CameraRotation()
