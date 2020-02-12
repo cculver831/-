@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInputName: Horizontal
   verticalInputName: Vertical
-  movementspeed: 5
+  movementspeed: 7
   jumpFallOff:
     serializedVersion: 2
     m_Curve:
@@ -317,11 +317,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sheriff Player
       objectReference: {fileID: 0}
-    - target: {fileID: 95474626191974340, guid: 15a550206f811c346b37f3a3f4495178,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a7b2c2e0180fed7409ec651625403d29, type: 2}
     - target: {fileID: 4457282994381246, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.3687873
@@ -366,6 +361,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95474626191974340, guid: 15a550206f811c346b37f3a3f4495178,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a7b2c2e0180fed7409ec651625403d29, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
 --- !u!1 &814381666086661398 stripped

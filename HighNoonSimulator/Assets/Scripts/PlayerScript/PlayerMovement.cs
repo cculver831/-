@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     {
         charController = GetComponent<CharacterController>();
         Player = GetComponent<Animator>();
-        if(Manager.Offline)
+        if(!Manager.Offline)
         {
             Debug.Log("Connected, hoe");
             if (photonView.IsMine)
@@ -61,7 +61,8 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
         float horizInput = Input.GetAxis(horizontalInputName) * movementspeed;
 
         float vertInput = Input.GetAxis(verticalInputName) * movementspeed;
-
+        Debug.Log("Horzontal Input: " + horizInput);
+        Debug.Log("Vertical Input: " + vertInput);
         Vector3 forwardMovement = transform.forward * vertInput;
         Vector3 rightMovement = transform.right * horizInput;
 

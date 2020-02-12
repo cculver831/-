@@ -8,6 +8,7 @@ public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
     public GameManager Manager;
+    public GameObject Tutorial;
     public static bool PlayerSelect = false;
     public GameObject PlayerS;
     public GameObject GameMode;
@@ -25,7 +26,7 @@ public class MenuManager : MonoBehaviour
     public GameObject Cam;
     private void Start()
     {
-        Status.SetActive(true);
+        //Status.SetActive(true);
         Cam = GameObject.Find("Main Camera");
         Camera = Cam.GetComponent<Animator>();
         //Singleton 
@@ -134,4 +135,21 @@ public class MenuManager : MonoBehaviour
 
 
     }
+
+    ///Fade Sequence for Tutorial
+
+    public void FadeStart()
+    {
+        StartCoroutine(TutorialChange());
+       
+    }
+
+    IEnumerator TutorialChange()
+    {
+       Main_Menu.SetActive(false);
+       
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("Tutoria");
+    }
+
 }
