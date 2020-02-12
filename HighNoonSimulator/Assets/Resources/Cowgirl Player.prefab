@@ -183,6 +183,7 @@ MonoBehaviour:
   jumpMulti: 4.5
   jumpKey: 32
   PlayerUI: {fileID: 170056, guid: e41946a981c3b444a84d15eb7c608ca4, type: 3}
+  Manager: {fileID: 781338521982725033, guid: 48ea57c92eca93a4bb6a93e7cf8a2453, type: 3}
 --- !u!114 &3052846621723498351
 MonoBehaviour:
   m_ObjectHideFlags: 0

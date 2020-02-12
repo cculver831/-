@@ -7,6 +7,7 @@ using Photon.Realtime;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
+    public GameManager Manager;
     public static bool PlayerSelect = false;
     public GameObject PlayerS;
     public GameObject GameMode;
@@ -24,6 +25,7 @@ public class MenuManager : MonoBehaviour
     public GameObject Cam;
     private void Start()
     {
+        Status.SetActive(true);
         Cam = GameObject.Find("Main Camera");
         Camera = Cam.GetComponent<Animator>();
         //Singleton 
@@ -46,6 +48,8 @@ public class MenuManager : MonoBehaviour
     public void PlayOffline()
     {
         PhotonNetwork.Disconnect();
+        Manager.Offline = true;
+        Debug.Log("Game Msnsger reports: " + Manager.Offline);
         Offline = true;
         Camera.Play("Camera_Pan");
         StartCoroutine(ChangeMenu());
@@ -53,7 +57,7 @@ public class MenuManager : MonoBehaviour
     }
     public void PlayOnline()
     {
-        Offline = true;
+        Offline = false;
         Camera.Play("Camera_Pan");
         StartCoroutine(ChangeMenu());
         StopCoroutine(ChangeMenu());

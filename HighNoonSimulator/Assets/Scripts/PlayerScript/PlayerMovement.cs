@@ -15,16 +15,15 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     [SerializeField] private KeyCode jumpKey;
     public GameObject PlayerUI; 
     private Animator Player;
-    private GameManager Manager;
     private bool isJumping;
-
+    public GameManager Manager;
     private CharacterController charController;
 
     private void Awake()
     {
         charController = GetComponent<CharacterController>();
         Player = GetComponent<Animator>();
-        if(PhotonNetwork.IsConnected)
+        if(Manager.Offline)
         {
             Debug.Log("Connected, hoe");
             if (photonView.IsMine)

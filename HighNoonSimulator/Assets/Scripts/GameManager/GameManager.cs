@@ -11,14 +11,14 @@ public class GameManager : MonoBehaviourPunCallbacks
     public MenuManager _MenuManager;
     public GameObject[] PlayerModels;
     public static int count;
-    private bool done = false;
+    private bool done;
     public bool Offline;
     public AudioSource AudioManager;
     public GameObject[] Spawnloc = new GameObject[4];
 
     void Awake()
     {
-        _MenuManager.Offline = Offline;
+        
         //Singleton 
         if (Instance == null)
         {
@@ -32,10 +32,12 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     private void Update()
     {
+        _MenuManager.Offline = Offline;
         //Check if arena is loaded in
-        
+        Debug.Log("Done: " + done);
+        Debug.Log("Offline: " + Offline);
         SceneManager.sceneLoaded += OnSceneLoaded;
-        if (_MenuManager.Offline == true)
+        if (Offline == true)
         {
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main") && done == false)
             {
