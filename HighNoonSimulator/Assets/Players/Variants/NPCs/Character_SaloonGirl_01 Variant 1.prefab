@@ -9,7 +9,7 @@ CharacterController:
   m_GameObject: {fileID: 2802093353572677157}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
@@ -25,7 +25,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2802093353572677157}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47474f07003c16749ae90be7318629db, type: 3}
   m_Name: 
@@ -59,6 +59,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMulti: 4.5
   jumpKey: 32
+  PlayerUI: {fileID: 0}
+  Manager: {fileID: 0}
 --- !u!1001 &2802786619058694754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -137,7 +139,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1819260798650952, guid: 96256c2234452c641863ebbc421be660, type: 3}
       propertyPath: m_Name
-      value: Character_SaloonGirl_01 Variant
+      value: Character_SaloonGirl_01 Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 4701152194719968, guid: 96256c2234452c641863ebbc421be660, type: 3}
       propertyPath: m_LocalPosition.x

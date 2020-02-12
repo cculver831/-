@@ -10,7 +10,17 @@ PrefabInstance:
     - target: {fileID: 7615030433935711933, guid: eeb84b85da7ae0448ac44bad42ffb074,
         type: 3}
       propertyPath: m_Name
-      value: Character_Business_Man_01 Variant
+      value: Character_Business_Man_01 Variant Variant 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201312446458913511, guid: eeb84b85da7ae0448ac44bad42ffb074,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3201312446458913510, guid: eeb84b85da7ae0448ac44bad42ffb074,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7612522695919644809, guid: eeb84b85da7ae0448ac44bad42ffb074,
         type: 3}

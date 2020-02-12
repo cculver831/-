@@ -10,7 +10,19 @@ PrefabInstance:
     - target: {fileID: 5026964276672835488, guid: 6769d136e8447a24781e58fb0c6ac325,
         type: 3}
       propertyPath: m_Name
-      value: Character_Business_Man_01 Variant
+      value: Character_Business_Man_01 Variant Variant 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 991368187, guid: 6769d136e8447a24781e58fb0c6ac325, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991368186, guid: 6769d136e8447a24781e58fb0c6ac325, type: 3}
+      propertyPath: jumpKey
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 991368186, guid: 6769d136e8447a24781e58fb0c6ac325, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5028345650598429076, guid: 6769d136e8447a24781e58fb0c6ac325,
         type: 3}
@@ -66,10 +78,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 991368186, guid: 6769d136e8447a24781e58fb0c6ac325, type: 3}
-      propertyPath: jumpKey
-      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 306911138016005687, guid: 6769d136e8447a24781e58fb0c6ac325,
         type: 3}

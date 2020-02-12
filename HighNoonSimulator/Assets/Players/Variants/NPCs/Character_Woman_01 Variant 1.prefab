@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4783319012015220462, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
       propertyPath: m_Name
-      value: Character_Woman_01 Variant
+      value: Character_Woman_01 Variant 1
       objectReference: {fileID: 0}
     - target: {fileID: 4785586921111722776, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
@@ -67,10 +67,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4842681225029451702, guid: c213fddb65f1d5545a750284aadf7a6b,
+    - target: {fileID: 4784909567389302464, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
-      propertyPath: m_Controller
-      value: 
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4784909567389302467, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
@@ -131,6 +131,16 @@ PrefabInstance:
         type: 3}
       propertyPath: jumpFallOff.m_Curve.Array.data[1].inWeight
       value: 0.044057205
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784909567389302467, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842681225029451702, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3600451908244624007, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
