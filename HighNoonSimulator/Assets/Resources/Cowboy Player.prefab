@@ -548,6 +548,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cowboy Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1800371080893130, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 95217205003396926, guid: e169e4d9dbd157b498e582065a5f9302,
         type: 3}
       propertyPath: m_Controller

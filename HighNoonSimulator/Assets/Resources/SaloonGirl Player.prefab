@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SaloonGirl Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1819260798650952, guid: 96256c2234452c641863ebbc421be660, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 4701152194719968, guid: 96256c2234452c641863ebbc421be660, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.008665
