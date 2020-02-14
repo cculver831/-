@@ -7,7 +7,7 @@ public class GameEvents : MonoBehaviour
     
     public static GameEvents current;
     public delegate float IncreaseScoreDelegate();
-    public static event IncreaseScoreDelegate IncreaseScore;
+   // public static event IncreaseScoreDelegate IncreaseScore;
     // Start is called before the first frame update
     private void Awake()
     {

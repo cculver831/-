@@ -6,7 +6,7 @@ using Photon.Realtime;
 public class PlayerLook : MonoBehaviourPunCallbacks
 {
     [SerializeField] private string MouseXInputname, MouseYInputname;
-    [SerializeField] private float mouseSensitivity;
+    [SerializeField] private float mouseSensitivity = 100;
 
     [SerializeField] private Transform playerBody;
 

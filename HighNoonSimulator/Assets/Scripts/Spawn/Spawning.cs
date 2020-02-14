@@ -25,8 +25,8 @@ public class Spawning : MonoBehaviour
         Debug.Log("enemies Spawning!");
         while(spawnAmount < total)
         {
-            int s = Random.RandomRange(0, 3);
-            int e = Random.RandomRange(0, 6);
+            int s = Random.Range(0, 3);
+            int e = Random.Range(0, 6);
             Instantiate(Enemies[e], new Vector3(spawnLoc[s].transform.position.x, spawnLoc[s].transform.position.y, spawnLoc[s].transform.position.z), Quaternion.identity);
             yield return new WaitForSeconds(SpawnRate);
             spawnAmount++;

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
 {
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
-    [SerializeField] private float movementspeed;
+    [SerializeField] private float movementspeed = 7;
 
     [SerializeField] private AnimationCurve jumpFallOff;
     [SerializeField] private float jumpMulti;

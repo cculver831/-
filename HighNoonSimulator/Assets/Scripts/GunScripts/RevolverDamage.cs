@@ -79,7 +79,7 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out Hit))
         {
             x = Hit.distance;
-            Debug.Log(Hit.transform.name);
+            Debug.Log("Distance: " + x);
             if(Hit.transform.tag == "Enemy" )
             {
                 if(First == true)
@@ -88,22 +88,22 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
                 }
                     
                 
-                if (x > 40 )
+                if (x > 30 )
                 {
                     Damage = 3;
                     Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
                     //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 2f);
-                    kills += 3;
+                    kills += 5;
                 }
-                else if ( x <= 40 && x > 30)
+                else if ( x <= 30 && x > 20)
                 {
-                    Damage = 3;
+                    Damage = 4;
 
                     Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
                     //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 3f);
                     kills += 2;
                 }
-                else if (x <= 30)
+                else if (x <= 20)
                 {
                     Damage = 5;
                     

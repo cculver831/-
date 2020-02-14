@@ -59,6 +59,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   jumpMulti: 4.5
   jumpKey: 32
+  Manager: {fileID: 781338521982725033, guid: 48ea57c92eca93a4bb6a93e7cf8a2453, type: 3}
 --- !u!1001 &2802786619058694754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -138,6 +139,10 @@ PrefabInstance:
     - target: {fileID: 1819260798650952, guid: 96256c2234452c641863ebbc421be660, type: 3}
       propertyPath: m_Name
       value: Character_SaloonGirl_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1819260798650952, guid: 96256c2234452c641863ebbc421be660, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4701152194719968, guid: 96256c2234452c641863ebbc421be660, type: 3}
       propertyPath: m_LocalPosition.x

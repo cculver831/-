@@ -260,9 +260,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae67d4de107e43428d832d087aaeefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Score: {fileID: 0}
+  Ammo: {fileID: 0}
   Damage: 5
   fireRate: 0.25
   weaponRange: 50
+  x: 0
 --- !u!1001 &9070699573262275268
 PrefabInstance:
   m_ObjectHideFlags: 0
