@@ -8,7 +8,9 @@ using UnityEngine.UI;
 
 public class RevolverDamage : MonoBehaviourPunCallbacks
 {
-    public GameObject PlayerUI;
+    public Text Score;
+    public Text Ammo;
+   
     private int kills = 0;
     //This script uses raycasting to detect and damage objects
     public int Damage = 5;
@@ -25,8 +27,8 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     private WaitForSeconds shotDuration = new WaitForSeconds(0.7f);
     private void Start()
     {
-       
-
+        kills = 0;
+        Score.text = "Score: " + kills;
         Fired = false;
         fpsCam = GetComponentInParent<Camera>();
     }
@@ -36,8 +38,8 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        PlayerUI.transform.Find("Score").GetComponent<Text>().text = "Score: " + kills;
-        PlayerUI.transform.Find("Ammo").GetComponent<Text>().text = "6 -" + ammo;
+        Ammo.text = ammo + " - 0";
+
         if (Input.GetButtonDown("Fire1") && Fired == false && ammo > 0)
         {
             StartCoroutine(Fire());
@@ -50,9 +52,8 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
             //  nextFire = Time.time + fireRate;
             Fired = true;
             
-            
-           
-            
+
+
         }
     }
 
@@ -73,7 +74,7 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     }
     void Shoot()
     {
-        PlayerUI.transform.Find("Score").GetComponent<Text>().text = "Score: " + kills;
+        
         RaycastHit Hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out Hit))
         {
@@ -87,26 +88,31 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
                 }
                     
                 
-                if (x <= 40 && x < 30)
+                if (x > 40 )
                 {
-
-                    Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 2f);
+                    Damage = 3;
+                    Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
+                    //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 2f);
                     kills += 3;
                 }
-                else if ( x <= 30 && x >20)
+                else if ( x <= 40 && x > 30)
                 {
-                    Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 3f);
+                    Damage = 3;
+
+                    Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
+                    //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 3f);
                     kills += 2;
                 }
-                else if (x > 20)
+                else if (x <= 30)
                 {
-                    kills += 1;
-                    Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 5f);
-                }
-
+                    Damage = 5;
                     
+                    Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
+                    //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 5f);
+                    kills += 1;
+                }
             }
-            
+            Score.text = "Score: " + kills;
             First = false;
 
         }

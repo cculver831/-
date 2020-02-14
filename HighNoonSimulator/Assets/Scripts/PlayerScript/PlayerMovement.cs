@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
     [SerializeField] private AnimationCurve jumpFallOff;
     [SerializeField] private float jumpMulti;
     [SerializeField] private KeyCode jumpKey;
-    public GameObject PlayerUI; 
+    //public GameObject PlayerUI; 
     private Animator Player;
     private bool isJumping;
     public GameManager Manager;
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
             Debug.Log("Connected, hoe");
             if (photonView.IsMine)
             {
-                GameObject PlayerUIGO = Instantiate(PlayerUI);
+                //GameObject PlayerUIGO = Instantiate(PlayerUI);
             }
             else
             {
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
         }
         else
         {
-            GameObject PlayerUIGO = Instantiate(PlayerUI);
+           // GameObject PlayerUIGO = Instantiate(PlayerUI);
             charController.enabled = true;
         }
     

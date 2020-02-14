@@ -12,7 +12,7 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
     public float enemyHealth = 10f;
     public Camera DeathCam;
     public Camera Cam;
-    public Canvas PlayerUI;
+    public Text Health;
     delegate void Die();
 
     private void Start()
@@ -20,10 +20,12 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
         Cam.gameObject.SetActive(true);
         DeathCam.gameObject.SetActive(false);
         PlayerAnim = gameObject.GetComponent<Animator>();
+
     }
     [PunRPC]
     void Update()
     {
+        Health.text = enemyHealth + "HP";
         if (enemyHealth <= 0)
         {
             death();
@@ -32,7 +34,7 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
     }
     public void death()
     {
-        PlayerUI.gameObject.SetActive(false);
+        
         PlayerAnim.SetBool("Idle", false);
         PlayerAnim.SetBool("Dying", true);
         Cam.gameObject.SetActive(false);

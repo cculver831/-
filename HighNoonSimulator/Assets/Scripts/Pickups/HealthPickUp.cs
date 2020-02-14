@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class HealthPickUp : MonoBehaviour
 {
-    public float maxHeight;
-    public float minHeight;
+    public float maxHeight = 2f;
+    public float minHeight = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +15,7 @@ public class HealthPickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float hoverHeight = (maxHeight + minHeight) / 2.0f;
+        float hoverHeight = (maxHeight + minHeight) ;
         float hoverRange = maxHeight - minHeight;
         float hoverSpeed = 5.0f;
         this.transform.position = Vector3.up * hoverHeight * Mathf.Cos(Time.time* hoverSpeed) * hoverRange;
