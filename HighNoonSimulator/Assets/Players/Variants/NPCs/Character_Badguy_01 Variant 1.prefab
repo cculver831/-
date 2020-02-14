@@ -225,10 +225,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae67d4de107e43428d832d087aaeefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerUI: {fileID: 0}
   Damage: 5
   fireRate: 0.25
   weaponRange: 50
-  ammo: 6
+  x: 0
 --- !u!114 &1952401058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,6 +335,10 @@ PrefabInstance:
     - target: {fileID: 1942289980213182, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_Name
       value: Character_Badguy_01 Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1942289980213182, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 4517892917420314, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_LocalPosition.x

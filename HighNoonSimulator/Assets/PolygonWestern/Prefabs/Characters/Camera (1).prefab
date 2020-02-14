@@ -263,7 +263,6 @@ MonoBehaviour:
   Damage: 5
   fireRate: 0.25
   weaponRange: 50
-  ammo: 6
 --- !u!1001 &9070699573262275268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,6 +273,10 @@ PrefabInstance:
     - target: {fileID: 1908759806999368, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
       propertyPath: m_Name
       value: SM_Wep_Revolver_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908759806999368, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
       propertyPath: m_LocalPosition.x

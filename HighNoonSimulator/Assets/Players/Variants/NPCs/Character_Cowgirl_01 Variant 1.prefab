@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character_Cowgirl_01 Variant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1506550050545096, guid: 24362449162558a49bc6904c0fda923a, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 95511887735396104, guid: 24362449162558a49bc6904c0fda923a,
         type: 3}
       propertyPath: m_Controller

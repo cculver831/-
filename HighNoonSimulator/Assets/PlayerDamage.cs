@@ -13,28 +13,37 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
     public Camera DeathCam;
     public Camera Cam;
     public Canvas PlayerUI;
-
+    delegate void Die();
 
     private void Start()
     {
+        Cam.gameObject.SetActive(true);
         DeathCam.gameObject.SetActive(false);
         PlayerAnim = gameObject.GetComponent<Animator>();
     }
     [PunRPC]
     void Update()
     {
-       if(enemyHealth <= 0)
+        if (enemyHealth <= 0)
         {
-           
-            PlayerUI.gameObject.SetActive(false);
-            PlayerAnim.SetBool("Idle", false);
-            PlayerAnim.SetBool("Dying", true);
-            Cam.gameObject.SetActive(false);
-            DeathCam.gameObject.SetActive(true);
-
-            
-
+            death();
+            GameEvents.current.death();
         }
+    }
+    public void death()
+    {
+        PlayerUI.gameObject.SetActive(false);
+        PlayerAnim.SetBool("Idle", false);
+        PlayerAnim.SetBool("Dying", true);
+        Cam.gameObject.SetActive(false);
+        DeathCam.gameObject.SetActive(true);
+
+    }
+    
+
+    public void Heal()
+    {
+        enemyHealth = 10;
     }
     [PunRPC]
     public void DeductPoints(int Damage)

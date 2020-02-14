@@ -237,10 +237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae67d4de107e43428d832d087aaeefa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerUI: {fileID: 0}
   Damage: 5
   fireRate: 0.25
   weaponRange: 50
-  ammo: 6
+  x: 0
 --- !u!136 &4572875984629325709
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -265,6 +266,10 @@ PrefabInstance:
     - target: {fileID: 1800371080893130, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
       propertyPath: m_Name
       value: Character_Cowboy_01 Variant 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800371080893130, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 95217205003396926, guid: e169e4d9dbd157b498e582065a5f9302,
         type: 3}
