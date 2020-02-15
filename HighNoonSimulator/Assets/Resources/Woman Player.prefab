@@ -244,7 +244,7 @@ PrefabInstance:
     - target: {fileID: 4784909567389302467, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
       propertyPath: jumpMulti
-      value: 7
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 4784909567389302467, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
