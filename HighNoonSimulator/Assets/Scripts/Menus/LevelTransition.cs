@@ -19,6 +19,6 @@ public class LevelTransition : MonoBehaviour
     }
     public void fadeComplete()
     {
-        SceneManager.LoadScene("Tutoria");
+        SceneManager.LoadScene("Main");
     }
 }

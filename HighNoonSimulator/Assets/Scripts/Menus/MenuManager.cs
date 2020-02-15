@@ -83,7 +83,7 @@ public class MenuManager : MonoBehaviour
         else
         {
             PlayerS.SetActive(false);
-            SceneManager.LoadScene("Main");
+          
         }
         
     }
