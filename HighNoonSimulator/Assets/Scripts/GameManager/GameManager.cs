@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviourPunCallbacks
         {
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main") && done == false)
             {
-                int newpoint = Random.Range(-6, 6);
-                Instantiate(PlayerModels[count], new Vector3(newpoint, 0f, newpoint), Quaternion.identity);
+                
+                Instantiate(PlayerModels[count], new Vector3(2, 2f, 47), Quaternion.Euler(0, 180, 0));
                 done = true;
 
             }
