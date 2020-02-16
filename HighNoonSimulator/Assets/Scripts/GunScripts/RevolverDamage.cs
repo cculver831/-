@@ -82,16 +82,11 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
             Debug.Log("Distance: " + x);
             if(Hit.transform.tag == "Enemy" )
             {
-                if(First == true)
-                {
-                    kills++;
-                }
-                    
-                
+ 
                 if (x > 30 )
                 {
                     Damage = 3;
-                    Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
+                    
                     //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 2f);
                     kills += 5;
                 }
@@ -106,15 +101,13 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
                 else if (x <= 20)
                 {
                     Damage = 5;
-                    
-                    Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
+                  
                     //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 5f);
                     kills += 1;
                 }
             }
             Score.text = "Score: " + kills;
-            First = false;
-
+            Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
         }
     }
 }
