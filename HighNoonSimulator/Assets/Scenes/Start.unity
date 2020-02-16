@@ -3946,6 +3946,7 @@ MonoBehaviour:
   CreateRoom: {fileID: 1127535774}
   RoomList: {fileID: 1079347296}
   InputFields: {fileID: 683763675}
+  LevelTransitions: {fileID: 918993549}
   Offline: 0
   Cam: {fileID: 485055258}
 --- !u!1 &594307012
@@ -3977,7 +3978,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &594307014
 MonoBehaviour:
@@ -6869,6 +6870,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e070f3da6a37244f9646a2cd9460356, type: 3}
+--- !u!1 &918993549 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5816231285920753657, guid: 9f6cfeab03823a7419b7f4236316f315,
+    type: 3}
+  m_PrefabInstance: {fileID: 5816231285363115715}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &935068163
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7590,17 +7597,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1061478717}
-        m_MethodName: FadeToLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1056317922
@@ -7848,7 +7844,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 5816231285363115715}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 918993549}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c221cd7cd18c0f7468f0a26a96ba266d, type: 3}
@@ -15438,7 +15434,7 @@ PrefabInstance:
     - target: {fileID: 5816231285920753656, guid: 9f6cfeab03823a7419b7f4236316f315,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5816231285920753656, guid: 9f6cfeab03823a7419b7f4236316f315,
         type: 3}

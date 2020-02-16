@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour
     public GameObject CreateRoom;
     public GameObject RoomList;
     public GameObject InputFields;
+    public GameObject LevelTransitions;
     public static bool MainM = true;
     public bool Offline;
     private Animator Camera;
@@ -83,6 +84,7 @@ public class MenuManager : MonoBehaviour
         else
         {
             PlayerS.SetActive(false);
+            LevelTransitions.GetComponent<LevelTransition>().FadeToLevel();
           
         }
         
