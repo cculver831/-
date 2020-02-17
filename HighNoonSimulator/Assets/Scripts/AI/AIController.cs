@@ -13,13 +13,11 @@ public class AIController : MonoBehaviour
     NavMeshAgent agent;
     [Range(1, 100)]
     public float rotSpeed = 5;
-    float speed = 6.5f;
     float visDis = 40.0f;
     float visAngle = 90.0f;
     private float shootdistance = 30f;
     public GameObject revovler;
     private Animator Player;
-    string state = "Idle";
     public bool alive = true;
 
     public int Damage = 5;
@@ -103,7 +101,6 @@ public class AIController : MonoBehaviour
         Vector3 dest = new Vector3(Random.Range(-50, 50), 0, Random.Range(-50, 50));
      
         agent.SetDestination(dest);
-        Player.SetBool("Idle", false);
         Player.SetBool("Running", true);
        
         Task.current.Succeed();
