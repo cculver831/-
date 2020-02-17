@@ -19,7 +19,7 @@ public class NPCDamage : MonoBehaviour
         {
             Debug.Log("Dead");
            
-            GetComponent<MeshCollider>().enabled = false;
+            GetComponent<CapsuleCollider>().enabled = false;
             player.SetBool("Dying", true);
             player.SetBool("Running", false);
             player.SetBool("Idle", false);

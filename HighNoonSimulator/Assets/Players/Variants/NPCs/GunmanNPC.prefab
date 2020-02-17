@@ -93,15 +93,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scripts:
   - {fileID: 4900000, guid: 4096383b1a4f5244490424db8d7a6986, type: 3}
-  - {fileID: 4900000, guid: 91677e561f9eca74c83418faae92bafc, type: 3}
   autoReset: 1
   tickOn: 0
   sourceInfos:
-  - isFoldout: 1
-    breakPoints: 
-    breakPointStatuses: 
-    collapsedLines: 
-    btScript: 
   - isFoldout: 1
     breakPoints: 
     breakPointStatuses: 

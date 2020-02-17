@@ -265,6 +265,7 @@ MonoBehaviour:
   Damage: 5
   fireRate: 0.25
   weaponRange: 50
+  ammo: 6
   x: 0
 --- !u!1001 &9070699573262275268
 PrefabInstance:

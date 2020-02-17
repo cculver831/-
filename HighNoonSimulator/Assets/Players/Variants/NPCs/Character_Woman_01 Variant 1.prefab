@@ -56,16 +56,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scripts:
   - {fileID: 4900000, guid: 4096383b1a4f5244490424db8d7a6986, type: 3}
-  - {fileID: 4900000, guid: 91677e561f9eca74c83418faae92bafc, type: 3}
   autoReset: 1
   tickOn: 0
   sourceInfos:
   - isFoldout: 0
-    breakPoints: 
-    breakPointStatuses: 
-    collapsedLines: 
-    btScript: 
-  - isFoldout: 1
     breakPoints: 
     breakPointStatuses: 
     collapsedLines: 
@@ -193,21 +187,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4842681225029451702, guid: c213fddb65f1d5545a750284aadf7a6b,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a7b2c2e0180fed7409ec651625403d29, type: 2}
-    - target: {fileID: 3904441208749227256, guid: c213fddb65f1d5545a750284aadf7a6b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3600451908244624007, guid: c213fddb65f1d5545a750284aadf7a6b,
-        type: 3}
-      propertyPath: playerBody
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4784909567389302464, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
       propertyPath: m_Enabled
@@ -277,6 +256,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842681225029451702, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a7b2c2e0180fed7409ec651625403d29, type: 2}
+    - target: {fileID: 3904441208749227256, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600451908244624007, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: playerBody
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4784909567389302467, guid: c213fddb65f1d5545a750284aadf7a6b, type: 3}
