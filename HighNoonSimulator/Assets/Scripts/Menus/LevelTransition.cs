@@ -6,11 +6,6 @@ using UnityEngine.SceneManagement;
 public class LevelTransition : MonoBehaviour
 {
     public Animator animator;
- 
-    private void Update()
-    {
-        
-    }
 
     public void FadeToLevel()
     {

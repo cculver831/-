@@ -21,7 +21,7 @@ public class HealthPickUp : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.tag == "Player" || other.tag == "Enemy"))
+        if ((other.tag == "Player" ))
         {
             if(other.GetComponent<PlayerDamage>().enemyHealth < 10)
             {

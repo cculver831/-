@@ -224,6 +224,20 @@ MonoBehaviour:
   jumpMulti: 4.5
   jumpKey: 32
   Manager: {fileID: 781338521982725033, guid: 48ea57c92eca93a4bb6a93e7cf8a2453, type: 3}
+--- !u!64 &1197363000656511301
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4189866394189817535}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 4837235d67e136e4b883adb2bafc73e8, type: 3}
 --- !u!1001 &802873266316298915
 PrefabInstance:
   m_ObjectHideFlags: 0

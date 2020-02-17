@@ -17,7 +17,7 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     public float fireRate = .25f;
     public float weaponRange = 50f;
     private float nextFire;
-    private int ammo = 6;
+    public int ammo = 6;
     private bool Fired;
     public float x;
     private bool First = true;
@@ -70,7 +70,7 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     public void reload()
     {
         ammo = 6;
-        Debug.Log("Ammo: " + ammo);
+
     }
     void Shoot()
     {
@@ -78,31 +78,25 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
         RaycastHit Hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out Hit))
         {
-            x = Hit.distance;
-            Debug.Log("Distance: " + x);
             if(Hit.transform.tag == "Enemy" )
             {
  
                 if (x > 30 )
                 {
                     Damage = 3;
-                    
-                    //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 2f);
+
                     kills += 5;
                 }
                 else if ( x <= 30 && x > 20)
                 {
                     Damage = 4;
 
-                    Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
-                    //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 3f);
                     kills += 2;
                 }
                 else if (x <= 20)
                 {
                     Damage = 5;
-                  
-                    //Hit.collider.gameObject.GetComponent<PhotonView>().RPC("DeductPoints", RpcTarget.AllBuffered, 5f);
+                 
                     kills += 1;
                 }
             }

@@ -21,18 +21,21 @@ public class AmmoPickup : MonoBehaviour
     {
         if((other.tag == "Player"))
         {
-            var pickUpSound = GetComponent<AudioSource>();
-            pickUpSound.Play();
-            other.GetComponentInChildren<RevolverDamage>().reload();
-            this.GetComponent<MeshCollider>().enabled = false;
-            this.GetComponent<MeshRenderer>().enabled = false;
-            StartCoroutine(spawnAmmo());
+            if(other.GetComponentInChildren<RevolverDamage>().ammo < 6)
+            {
+                var pickUpSound = GetComponent<AudioSource>();
+                pickUpSound.Play();
+                other.GetComponentInChildren<RevolverDamage>().reload();
+                this.GetComponent<MeshCollider>().enabled = false;
+                this.GetComponent<MeshRenderer>().enabled = false;
+                StartCoroutine(spawnAmmo());
+            }
+
         }
     }
 
     IEnumerator spawnAmmo()
     {
-        Debug.Log("Please wait for ammo");
         yield return new WaitForSeconds(5.0f);
         this.GetComponent<MeshRenderer>().enabled = true;
         this.GetComponent<MeshCollider>().enabled = true; ;

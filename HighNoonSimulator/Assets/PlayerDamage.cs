@@ -29,7 +29,6 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
         if (enemyHealth <= 0)
         {
             death();
-            GameEvents.current.death();
         }
     }
     public void death()

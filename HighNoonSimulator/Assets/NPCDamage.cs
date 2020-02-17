@@ -19,11 +19,12 @@ public class NPCDamage : MonoBehaviour
         {
             Debug.Log("Dead");
            
-            GetComponent<CapsuleCollider>().enabled = false;
+            GetComponent<MeshCollider>().enabled = false;
             player.SetBool("Dying", true);
             player.SetBool("Running", false);
             player.SetBool("Idle", false);
             GetComponent<AIController>().enabled = false;
+           
             //GameEvents.current.death();
         }
     }

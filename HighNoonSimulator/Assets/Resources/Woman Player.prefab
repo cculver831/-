@@ -83,6 +83,20 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299117561}
   m_Enabled: 1
+--- !u!64 &-6555884589703413458
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6213451675556203871}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300002, guid: 4837235d67e136e4b883adb2bafc73e8, type: 3}
 --- !u!114 &-8072432277106655446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +250,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4842681225029451702, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a7b2c2e0180fed7409ec651625403d29, type: 2}
+    - target: {fileID: 1540764577998312168, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.094
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540764577998312168, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.608
+      objectReference: {fileID: 0}
+    - target: {fileID: 3600451908244624007, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: playerBody
+      value: 
+      objectReference: {fileID: 6211185026898456745}
+    - target: {fileID: 290418090182915896, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: Ammo
+      value: 
+      objectReference: {fileID: 4247551490852455587}
+    - target: {fileID: 290418090182915896, guid: c213fddb65f1d5545a750284aadf7a6b,
+        type: 3}
+      propertyPath: Score
+      value: 
+      objectReference: {fileID: 7328827706169728404}
     - target: {fileID: 4784909567389302467, guid: c213fddb65f1d5545a750284aadf7a6b,
         type: 3}
       propertyPath: jumpKey
@@ -314,26 +358,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 781338521982725033, guid: 48ea57c92eca93a4bb6a93e7cf8a2453,
         type: 3}
-    - target: {fileID: 4842681225029451702, guid: c213fddb65f1d5545a750284aadf7a6b,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a7b2c2e0180fed7409ec651625403d29, type: 2}
-    - target: {fileID: 3600451908244624007, guid: c213fddb65f1d5545a750284aadf7a6b,
-        type: 3}
-      propertyPath: playerBody
-      value: 
-      objectReference: {fileID: 6211185026898456745}
-    - target: {fileID: 290418090182915896, guid: c213fddb65f1d5545a750284aadf7a6b,
-        type: 3}
-      propertyPath: Ammo
-      value: 
-      objectReference: {fileID: 4247551490852455587}
-    - target: {fileID: 290418090182915896, guid: c213fddb65f1d5545a750284aadf7a6b,
-        type: 3}
-      propertyPath: Score
-      value: 
-      objectReference: {fileID: 7328827706169728404}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c213fddb65f1d5545a750284aadf7a6b, type: 3}
 --- !u!1 &6213451675556203871 stripped
