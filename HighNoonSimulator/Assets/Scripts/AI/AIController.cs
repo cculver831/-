@@ -13,7 +13,7 @@ public class AIController : MonoBehaviour
     public Vector3 destination; //Where to go
     NavMeshAgent agent;
     [Range(1, 100)]
-    public float rotSpeed = 5;
+    public float rotSpeed = 15;
     float VisualRange = 40.0f;
     float visDis = 40.0f;
     float visAngle = 90.0f;
@@ -41,6 +41,7 @@ public class AIController : MonoBehaviour
     {
        if( GetComponent<NPCDamage>().enemyHealth <= 0)
         {
+            Player.SetBool("Dying", true);
             return true;
         }
         else
@@ -155,9 +156,9 @@ public class AIController : MonoBehaviour
     }
     //Checks Health
     [Task]
-    public bool IsHealthLessThan()
+    public bool IsHealthLessThan(int x)
     {
-        if (GetComponent<NPCDamage>().enemyHealth <= 4)
+        if (GetComponent<NPCDamage>().enemyHealth <= x)
         {
             return true;
         }

@@ -1,0 +1,34 @@
+tree("Root")
+	sequence
+		tree("Patrol")
+		
+tree("Patrol")
+	fallback
+		tree("Flee")
+		while IsHealthLessThan(5)
+			fallback
+				tree("Attack")
+				tree("Roam")
+tree("Attack")
+	sequence
+		not dead
+		seePlayer
+		TargetPlayer
+		LookAtTarget
+		Wait(0.5)
+		Fire
+
+tree("Flee")
+	sequence
+			not dead
+			IsHealthLessThan(5)
+			FindHealth
+			Heal
+
+tree("Roam")
+	sequence
+		not dead
+		not seePlayer
+		PickDestination
+		MoveToDestination
+		
