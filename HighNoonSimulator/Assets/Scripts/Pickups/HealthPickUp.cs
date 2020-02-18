@@ -25,7 +25,6 @@ public class HealthPickUp : MonoBehaviour
             }
 
         }
-
     }
 
     public void pickedUp(GameObject enemy)
