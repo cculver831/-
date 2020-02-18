@@ -94,6 +94,7 @@ public class AIController : MonoBehaviour
     public void LookAtTarget()
     {
         Vector3 direction = Target - transform.position;
+
         // Rotates facing the player
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotSpeed);
         if (Task.isInspected)
@@ -103,6 +104,14 @@ public class AIController : MonoBehaviour
         {
             Task.current.Succeed();
         }
+    }
+    //Stop AI from moving to aim
+    [Task]
+    public bool Stop(float angle)
+    {
+        //Set Vectpr
+        var p = transform.position = Quaternion.AngleAxis(angle, Vector3.up) * transform.forward;
+        return true;
     }
     //Shoots at player
     [Task]
