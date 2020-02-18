@@ -5,15 +5,6 @@ using UnityEngine;
 public class HealthPickUp : MonoBehaviour
 {
 
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -21,9 +12,9 @@ public class HealthPickUp : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.tag == "Player" ))
+        if (other.tag == "Player")
         {
-            if(other.GetComponent<PlayerDamage>().enemyHealth < 10)
+            if (other.GetComponent<PlayerDamage>().enemyHealth < 10)
             {
                 var pickUpSound = GetComponent<AudioSource>();
                 pickUpSound.Play();
@@ -32,13 +23,22 @@ public class HealthPickUp : MonoBehaviour
                 this.GetComponent<MeshRenderer>().enabled = false;
                 StartCoroutine(spawnHealth());
             }
-           
+
         }
+
     }
 
+    public void pickedUp(GameObject enemy)
+    {
+        Debug.Log("Enemy Healed");
+        enemy.GetComponent<NPCDamage>().enemyHealth = 10;
+        this.GetComponent<MeshCollider>().enabled = false;
+        this.GetComponent<MeshRenderer>().enabled = false;
+        StartCoroutine(spawnHealth());
+    }
     IEnumerator spawnHealth()
     {
-        Debug.Log("Please wait for ammo");
+        Debug.Log("Please wait for health");
         yield return new WaitForSeconds(5.0f);
         this.GetComponent<MeshRenderer>().enabled = true;
         this.GetComponent<MeshCollider>().enabled = true; ;

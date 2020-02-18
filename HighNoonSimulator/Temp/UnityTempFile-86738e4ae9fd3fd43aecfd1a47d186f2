@@ -1,16 +1,12 @@
 /target:library
 /nowarn:0169
-/out:Temp/Unity.VSCode.Editor.dll
+/out:Temp/Assembly-CSharp-Editor.dll
 /debug:portable
 /optimize-
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
-/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
-/reference:Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
-/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
-/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
-/reference:Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+/reference:Library/ScriptAssemblies/Assembly-CSharp.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
@@ -72,6 +68,40 @@
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.WindModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/Managed/UnityEditor.dll"
+/reference:Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+/reference:Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+/reference:Library/ScriptAssemblies/Unity.Timeline.Editor.dll
+/reference:Library/ScriptAssemblies/PhotonUnityNetworking.Utilities.PhotonPlayer.Editor.dll
+/reference:Library/ScriptAssemblies/PunDemos.DemoHubEditor.dll
+/reference:Library/ScriptAssemblies/PunDemos.DemoSlotcarEditor.dll
+/reference:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.VSCode.Editor.dll
+/reference:Library/ScriptAssemblies/PhotonUnityNetworking.Demos.dll
+/reference:Library/ScriptAssemblies/PhotonUnityNetworking.Utilities.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEngine.UI.dll
+/reference:Library/ScriptAssemblies/Unity.Timeline.dll
+/reference:Library/ScriptAssemblies/PhotonWebSocket.dll
+/reference:Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll
+/reference:Library/ScriptAssemblies/PhotonRealtime.dll
+/reference:Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll
+/reference:Library/ScriptAssemblies/Unity.Rider.Editor.dll
+/reference:Library/ScriptAssemblies/PhotonUnityNetworking.dll
+/reference:Library/ScriptAssemblies/UMotionSourceApplication.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll
+/reference:Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll
+/reference:Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll
+/reference:Library/ScriptAssemblies/PhotonChat.dll
+/reference:Library/ScriptAssemblies/Unity.TextMeshPro.dll
+/reference:Library/ScriptAssemblies/PhotonUnityNetworking.Utilities.Culling.Editor.dll
+/reference:Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll
+/reference:Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll
+/reference:Library/ScriptAssemblies/PhotonUnityNetworking.Editor.dll
+/reference:Library/ScriptAssemblies/UMotionSourceEditor.dll
+/reference:Library/ScriptAssemblies/UnityEditor.UI.dll
+/reference:Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
@@ -82,12 +112,10 @@
 /reference:Assets/Players/Variants/NPCs/Plugins/WebSocket/websocket-sharp.dll
 /reference:Assets/UMotionEditor/Plugins/Application/UMotionApplication.dll
 /reference:Assets/UMotionEditor/Plugins/Editor/UMotionEditor.dll
-/reference:"C:/Users/Chloe Culver/Desktop/GamDev/HNS/HighNoonSimulator/Library/PackageCache/com.unity.ads@2.0.8/UnityEngine.Advertisements.dll"
 /reference:"C:/Users/Chloe Culver/Desktop/GamDev/HNS/HighNoonSimulator/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll"
 /reference:"C:/Users/Chloe Culver/Desktop/GamDev/HNS/HighNoonSimulator/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll"
 /reference:"C:/Users/Chloe Culver/Desktop/GamDev/HNS/HighNoonSimulator/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll"
 /reference:"C:/Users/Chloe Culver/Desktop/GamDev/HNS/HighNoonSimulator/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll"
-/reference:"C:/Users/Chloe Culver/Desktop/GamDev/HNS/HighNoonSimulator/Library/PackageCache/com.unity.purchasing@2.0.6/UnityEngine.Purchasing.dll"
 /reference:"C:/Users/Chloe Culver/Desktop/GamDev/HNS/HighNoonSimulator/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll"
 /reference:"C:/Users/Chloe Culver/Desktop/GamDev/HNS/HighNoonSimulator/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll"
 /reference:"C:/Program Files/Unity/Hub/Editor/2019.2.3f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll"
@@ -307,7 +335,5 @@
 /define:PUN_2_OR_NEWER
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
-"C:\Users\Chloe Culver\Desktop\GamDev\HNS\HighNoonSimulator\Library\PackageCache\com.unity.ide.vscode@1.1.0\Editor\ProjectGeneration.cs"
-"C:\Users\Chloe Culver\Desktop\GamDev\HNS\HighNoonSimulator\Library\PackageCache\com.unity.ide.vscode@1.1.0\Editor\Utility.cs"
-"C:\Users\Chloe Culver\Desktop\GamDev\HNS\HighNoonSimulator\Library\PackageCache\com.unity.ide.vscode@1.1.0\Editor\VSCodeDiscovery.cs"
-"C:\Users\Chloe Culver\Desktop\GamDev\HNS\HighNoonSimulator\Library\PackageCache\com.unity.ide.vscode@1.1.0\Editor\VSCodeScriptEditor.cs"
+Assets\PandaBehaviour\Core\Editor\CreatePandaScriptMenu.cs
+Assets\PandaBehaviour\Core\Editor\PandaBehaviourEditor.cs

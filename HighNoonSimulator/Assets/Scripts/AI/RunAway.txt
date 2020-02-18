@@ -1,0 +1,5 @@
+tree("Root")
+	sequence
+		IsHealthLessThan
+		FindHealth
+		Heal

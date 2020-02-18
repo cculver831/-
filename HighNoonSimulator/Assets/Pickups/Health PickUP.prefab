@@ -138,6 +138,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health PickUP
       objectReference: {fileID: 0}
+    - target: {fileID: 1507335860393856, guid: fb98f7232220ac74eb5cae7d24bc7cfb, type: 3}
+      propertyPath: m_TagString
+      value: Health
+      objectReference: {fileID: 0}
     - target: {fileID: 4649207456486754, guid: fb98f7232220ac74eb5cae7d24bc7cfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.8
