@@ -6,6 +6,7 @@ public class Spawning : MonoBehaviour
 {
 
     //Setting up array of enemies
+    public GameObject Player;
     public GameObject[] Enemies;
     public GameObject[] spawnLoc;
     private int spawnAmount = 0;
@@ -23,7 +24,7 @@ public class Spawning : MonoBehaviour
     IEnumerator Spawn()
     {
         Debug.Log("enemies Spawning!");
-        while(spawnAmount < total)
+        while(true)
         {
             int s = Random.Range(0, 3);
             int e = Random.Range(0, 6);

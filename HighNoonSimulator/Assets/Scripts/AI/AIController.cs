@@ -157,7 +157,7 @@ public class AIController : MonoBehaviour
     [Task]
     public bool IsHealthLessThan()
     {
-        if (GetComponent<NPCDamage>().enemyHealth <= 5)
+        if (GetComponent<NPCDamage>().enemyHealth <= 4)
         {
             return true;
         }
@@ -206,10 +206,10 @@ public class AIController : MonoBehaviour
         Player.SetBool("Running", true);
         if (agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
-            //HealthPack.GetComponent<HealthPickUp>().pickedUp(this.gameObject);
+            HealthPack.GetComponent<HealthPickUp>().pickedUp(this.gameObject);
             Player.SetBool("Running", false);
             Player.SetBool("Idle", true);
-            //GetComponent<NPCDamage>().enemyHealth = 10;
+            GetComponent<NPCDamage>().enemyHealth = 10;
             Task.current.Succeed();
         }
     }

@@ -10,12 +10,9 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Debug.Log("escape pressed");
             if (paused)
             {
                 Resume();
-             
-
             }
             else
             {

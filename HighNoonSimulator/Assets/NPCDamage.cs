@@ -22,7 +22,7 @@ public class NPCDamage : MonoBehaviour
             player.SetBool("Dying", true);
             player.SetBool("Running", false);
             player.SetBool("Idle", false);
-           
+            Destroy(gameObject, 2);
             //GameEvents.current.death();
         }
     }

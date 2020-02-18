@@ -78,22 +78,24 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
         RaycastHit Hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out Hit))
         {
+            x = Hit.distance;
+            Debug.Log("Gun shot distance: " + Hit.distance);
             if(Hit.transform.tag == "Enemy" )
             {
  
-                if (x > 30 )
+                if (x > 20 )
                 {
                     Damage = 3;
 
                     kills += 5;
                 }
-                else if ( x <= 30 && x > 20)
+                else if ( x <= 20 && x > 10)
                 {
                     Damage = 4;
 
                     kills += 2;
                 }
-                else if (x <= 20)
+                else if (x <= 10)
                 {
                     Damage = 5;
                  
