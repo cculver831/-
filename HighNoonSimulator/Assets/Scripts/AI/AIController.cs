@@ -15,12 +15,10 @@ public class AIController : MonoBehaviour
     [Range(1, 100)]
     public float rotSpeed = 25;
     float VisualRange = 40.0f;
-    float visDis = 40.0f;
     float visAngle = 90.0f;
     private float shootdistance = 30f;
     public GameObject revovler;
     private Animator Player;
-    public bool alive = true;
     private Vector3 closestHealth;
     public int Damage = 5;
 
@@ -32,7 +30,12 @@ public class AIController : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        player= GameObject.FindWithTag("Player").GetComponent<Transform>().transform;
+      //  player= GameObject.FindWithTag("Player").GetComponent<Transform>().transform;
+        
+    }
+    private void Update()
+    {
+        player = GameObject.FindWithTag("Player").GetComponent<Transform>().transform;
         Player = GetComponent<Animator>();
     }
     //Checks if player is dead or not
@@ -50,8 +53,7 @@ public class AIController : MonoBehaviour
         }
     }
     //Checks if AI can 'see' player
-    // Raycasts to see if a wall is separting player from AI AND
-    //Player is in sight
+    // Raycasts to see if a wall is separting player from AI and checks if player is in VisualRange
     [Task]
     bool seePlayer()
     {
@@ -150,9 +152,9 @@ public class AIController : MonoBehaviour
         if (Physics.Raycast(revovler.transform.position, revovler.transform.forward, out Hit))
         {
             Debug.DrawLine(transform.position, Hit.point, Color.red);
-            Debug.Log( Hit.collider.gameObject.name);
+
             x = Hit.distance;
-            Debug.Log("Gun shot distance: " + Hit.distance);
+            //Debug.Log("Gun shot distance: " + Hit.distance);
             if (Hit.transform.tag == "Player")
             {
 

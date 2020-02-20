@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviourPunCallbacks
 {
     public static GameManager Instance;
+    public GameObject Player;
     public MenuManager _MenuManager;
     public GameObject[] PlayerModels;
     public static int count;
@@ -16,7 +17,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool Offline;
     public AudioSource AudioManager;
     public GameObject[] Spawnloc = new GameObject[4];
-    public Text Score;
+    public int Score;
 
     void Awake()
     {
@@ -36,20 +37,27 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         _MenuManager.Offline = Offline;
         //Check if arena is loaded in
-        Debug.Log("Done: " + done);
-        Debug.Log("Gamemanager Offline: " + Offline);
         SceneManager.sceneLoaded += OnSceneLoaded;
+
         if (Offline == true)
         {
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main") && done == false)
             {
-                
+                Player = PlayerModels[count];
+                Player.GetComponent<PlayerMovement>().enabled = true;
+                Player.GetComponentInChildren<PlayerLook>().enabled = true;
+                Player.GetComponentInChildren<PlayerDamage>().DeathCam.enabled = true;
+                Player.GetComponentInChildren<PlayerDamage>().Cam.enabled = true;
+                Player.GetComponentInChildren<RevolverDamage>().enabled = true;
                 Instantiate(PlayerModels[count], new Vector3(2, 2f, 47), Quaternion.Euler(0, 180, 0));
                 done = true;
-                Score = PlayerModels[count].GetComponentInChildren<RevolverDamage>().Score;
-                Score.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+                
+               // Score.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
             }
+           
         }
+       // Score = PlayerModels[count].GetComponentInChildren<RevolverDamage>().kills;
+        Debug.Log("Game Manager Score: " + Score);
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -59,7 +67,6 @@ public class GameManager : MonoBehaviourPunCallbacks
             int newpoint = Random.Range(-6, 6);
             PhotonNetwork.Instantiate(PlayerModels[count].name, new Vector3(newpoint, 0f, newpoint), Quaternion.identity);
             done = true;
-            Debug.Log("Player Created");
         }
     }
     private void FindSpawn()

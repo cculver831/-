@@ -11,7 +11,7 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     public Text Score;
     public Text Ammo;
    
-    private int kills = 0;
+    public int kills = 0;
     //This script uses raycasting to detect and damage objects
     public int Damage = 5;
     public float fireRate = .25f;
@@ -103,6 +103,7 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
                 }
             }
             Score.text = "Score: " + kills;
+            GameObject.FindWithTag("GameManager").GetComponent<GameManager>().Score = kills;
             PlayerPrefs.SetInt("HighScore", kills);
             Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
         }

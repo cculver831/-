@@ -39,7 +39,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717256058}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -196,6 +196,8 @@ MonoBehaviour:
   DeathCam: {fileID: 717256061}
   Cam: {fileID: 6152616549288009545}
   Health: {fileID: 5512900921490667147}
+  levelTrans: {fileID: 5816231285920753657, guid: 9f6cfeab03823a7419b7f4236316f315,
+    type: 3}
 --- !u!114 &2802786619936406624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +205,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4189866394189817535}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47474f07003c16749ae90be7318629db, type: 3}
   m_Name: 
@@ -548,6 +550,11 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 4193872143206210583}
+    - target: {fileID: 4721271752844526729, guid: 418c589e199d17d418a45bbd7f4ea009,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8391835568939278646, guid: 418c589e199d17d418a45bbd7f4ea009,
         type: 3}
       propertyPath: Ammo

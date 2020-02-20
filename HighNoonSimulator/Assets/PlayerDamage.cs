@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerDamage : MonoBehaviourPunCallbacks
 {
@@ -13,6 +13,7 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
     public Camera DeathCam;
     public Camera Cam;
     public Text Health;
+    public GameObject levelTrans;
     delegate void Die();
 
     private void Start()
@@ -20,6 +21,7 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
         Cam.gameObject.SetActive(true);
         DeathCam.gameObject.SetActive(false);
         PlayerAnim = gameObject.GetComponent<Animator>();
+        levelTrans = GameObject.FindGameObjectWithTag("Transition");
 
     }
     [PunRPC]
@@ -40,9 +42,20 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
         Cam.gameObject.SetActive(false);
         DeathCam.gameObject.SetActive(true);
         GetComponent<PlayerMovement>().enabled = false;
+        StartCoroutine(Transition());
+        StopCoroutine(Transition());
+        levelTrans.GetComponent<LevelTransition>().FadeToLevel();
+        SceneManager.LoadScene("GameOVer");
+        Debug.Log("Changing Level");
+        
+
+
 
     }
-    
+    IEnumerator Transition()
+    {
+        yield return new WaitForSeconds(2);
+    }
 
     public void Heal()
     {

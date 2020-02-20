@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class NPCAttack : MonoBehaviour
 {
-    //This script uses raycasting to detect and damage objects
-    public int Damage = 5;
-    private float nextFire;
-    private int ammo = 6;
+    //This script uses raycasting to detect and damage objects\
+    private int Damage = 1;
     private bool Fired;
     private float x;
 

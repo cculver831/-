@@ -12,7 +12,6 @@ public class Spawning : MonoBehaviour
     private int spawnAmount = 0;
     public int total; 
     public float SpawnRate = 2.0f;
-    private int wave = 0;
     // Start is called before the first frame update
     void Start()
     {

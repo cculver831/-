@@ -39,7 +39,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1602427545}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -125,7 +125,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118747171}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -176,7 +176,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118747171}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5eda6cfac409c94f9d9f8c078688087, type: 3}
   m_Name: 
@@ -311,6 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: {fileID: 4204154336834887919}
   Ammo: {fileID: 7286617986525215192}
+  kills: 0
   Damage: 5
   fireRate: 0.25
   weaponRange: 50
@@ -432,7 +433,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6781431133601394118}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47474f07003c16749ae90be7318629db, type: 3}
   m_Name: 
@@ -482,7 +483,9 @@ MonoBehaviour:
   enemyHealth: 10
   DeathCam: {fileID: 1602427548}
   Cam: {fileID: 2118747182}
-  Health: {fileID: 0}
+  Health: {fileID: 6156445799884765626}
+  levelTrans: {fileID: 5816231285920753657, guid: 9f6cfeab03823a7419b7f4236316f315,
+    type: 3}
 --- !u!1001 &1357188777369175442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -608,6 +611,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1357188777369175442}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6156445799884765626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5162711590762396712, guid: fb4d33c1cb139324abc7990b38d6bd0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1357188777369175442}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7286617986525215192 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8631976013677608010, guid: fb4d33c1cb139324abc7990b38d6bd0b,
