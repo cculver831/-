@@ -174,9 +174,6 @@ public class AIController : MonoBehaviour
         }
         Task.current.Succeed();
     }
-
-
-
     [Task]
     public void PickDestination()
     {

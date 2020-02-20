@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviourPunCallbacks
 {
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public bool Offline;
     public AudioSource AudioManager;
     public GameObject[] Spawnloc = new GameObject[4];
+    public Text Score;
 
     void Awake()
     {
@@ -44,7 +46,8 @@ public class GameManager : MonoBehaviourPunCallbacks
                 
                 Instantiate(PlayerModels[count], new Vector3(2, 2f, 47), Quaternion.Euler(0, 180, 0));
                 done = true;
-
+                Score = PlayerModels[count].GetComponentInChildren<RevolverDamage>().Score;
+                Score.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
             }
         }
     }

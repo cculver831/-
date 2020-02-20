@@ -20,7 +20,6 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     public int ammo = 6;
     private bool Fired;
     public float x;
-    private bool First = true;
 
     public RaycastHit Shot;
     private Camera fpsCam;
@@ -31,6 +30,7 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
         Score.text = "Score: " + kills;
         Fired = false;
         fpsCam = GetComponentInParent<Camera>();
+        
     }
 
 
@@ -103,6 +103,7 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
                 }
             }
             Score.text = "Score: " + kills;
+            PlayerPrefs.SetInt("HighScore", kills);
             Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
         }
     }
