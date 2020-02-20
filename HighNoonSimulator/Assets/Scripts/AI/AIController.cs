@@ -143,7 +143,7 @@ public class AIController : MonoBehaviour
     {
         var gunSound = GetComponentInChildren<AudioSource>();
         gunSound.Play();
-        GetComponentInChildren<Animation>().Play("Revolver fire");
+        //GetComponentInChildren<Animation>().Play("Revolver fire");
 
 
         RaycastHit Hit;
