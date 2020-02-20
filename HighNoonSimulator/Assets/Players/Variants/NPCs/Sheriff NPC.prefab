@@ -14,23 +14,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &-8717448472770877856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1721591273278931973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab2beb1c4c88314faa3b5d3f1f4548c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0, z: 0}
-  rotSpeed: 0
-  revovler: {fileID: 0}
-  alive: 1
-  Damage: 5
 --- !u!114 &-5165483122114277099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,7 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scripts:
-  - {fileID: 4900000, guid: 4096383b1a4f5244490424db8d7a6986, type: 3}
+  - {fileID: 4900000, guid: cd95718f73cf9f94c9ff082206f4bab5, type: 3}
   autoReset: 1
   tickOn: 0
   sourceInfos:
@@ -53,6 +36,23 @@ MonoBehaviour:
     breakPointStatuses: 
     collapsedLines: 
     btScript: 
+--- !u!114 &2660385536995901351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721591273278931973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab2beb1c4c88314faa3b5d3f1f4548c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destination: {x: 0, y: 0, z: 0}
+  rotSpeed: 25
+  revovler: {fileID: 4485960222678889555}
+  alive: 1
+  Damage: 5
 --- !u!195 &4279870117982378967
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -87,6 +87,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb25e40493751f47bf95dfb0aec8a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealth: 10
+--- !u!1 &4485960222678889555
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4510196587243812268}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4510196587243812268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4485960222678889555}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.065, z: 0.334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2382583147819246203}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1722592023694995616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -170,7 +201,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1040643676778012, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
       propertyPath: m_Name
-      value: Character_Sheriff_01 Variant 1
+      value: Sheriff NPC
       objectReference: {fileID: 0}
     - target: {fileID: 1040643676778012, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
       propertyPath: m_TagString
@@ -238,4 +269,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4457282994381246, guid: 15a550206f811c346b37f3a3f4495178,
     type: 3}
   m_PrefabInstance: {fileID: 1722592025158953497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2378450928720950261
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1722685895704710055}
+    m_Modifications:
+    - target: {fileID: 1908759806999368, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_Name
+      value: SM_Wep_Revolver_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.428
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.215
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 146c5256fc521374c91ca33fc98e9603, type: 3}
+--- !u!4 &2382583147819246203 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4879888146567566, guid: 146c5256fc521374c91ca33fc98e9603,
+    type: 3}
+  m_PrefabInstance: {fileID: 2378450928720950261}
   m_PrefabAsset: {fileID: 0}

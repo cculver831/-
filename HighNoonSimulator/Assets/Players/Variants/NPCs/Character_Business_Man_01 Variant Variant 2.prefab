@@ -27,7 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scripts:
-  - {fileID: 4900000, guid: 4096383b1a4f5244490424db8d7a6986, type: 3}
+  - {fileID: 4900000, guid: cd95718f73cf9f94c9ff082206f4bab5, type: 3}
   autoReset: 1
   tickOn: 0
   sourceInfos:
@@ -70,6 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb25e40493751f47bf95dfb0aec8a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealth: 10
 --- !u!114 &7091729028684804880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,7 +84,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0, z: 0}
-  rotSpeed: 0
+  rotSpeed: 25
   revovler: {fileID: 0}
   alive: 1
   Damage: 5

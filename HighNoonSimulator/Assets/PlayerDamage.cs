@@ -35,9 +35,11 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
     {
         
         PlayerAnim.SetBool("Idle", false);
+        PlayerAnim.SetBool("Running", false);
         PlayerAnim.SetBool("Dying", true);
         Cam.gameObject.SetActive(false);
         DeathCam.gameObject.SetActive(true);
+        GetComponent<PlayerMovement>().enabled = false;
 
     }
     

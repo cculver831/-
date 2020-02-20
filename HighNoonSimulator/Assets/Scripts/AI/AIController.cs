@@ -13,7 +13,7 @@ public class AIController : MonoBehaviour
     public Vector3 destination; //Where to go
     NavMeshAgent agent;
     [Range(1, 100)]
-    public float rotSpeed = 15;
+    public float rotSpeed = 25;
     float VisualRange = 40.0f;
     float visDis = 40.0f;
     float visAngle = 90.0f;
@@ -105,12 +105,36 @@ public class AIController : MonoBehaviour
             Task.current.Succeed();
         }
     }
+
+    //Lines up Shot for AI
+    [Task]
+    public bool ShotLinedUp()
+    {
+        Vector3 distance = Target - transform.position;
+        if(distance.magnitude < shootdistance && Vector3.Angle(transform.forward, distance) < 10.0f)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+    [Task]
+    public void SetTargetDestination()
+    {
+        agent.SetDestination(Target);
+        Player.SetBool("Running", true);
+        Task.current.Succeed();
+    }
     //Stop AI from moving to aim
     [Task]
     public bool Stop(float angle)
     {
-        //Set Vectpr
-        var p = transform.position = Quaternion.AngleAxis(angle, Vector3.up) * transform.forward;
+        //Make enemy look around for player
+        var p = transform.position + Quaternion.AngleAxis(angle, Vector3.up) * transform.forward;
+
         return true;
     }
     //Shoots at player
@@ -128,6 +152,7 @@ public class AIController : MonoBehaviour
             Debug.DrawLine(transform.position, Hit.point, Color.red);
             Debug.Log( Hit.collider.gameObject.name);
             x = Hit.distance;
+            Debug.Log("Gun shot distance: " + Hit.distance);
             if (Hit.transform.tag == "Player")
             {
 

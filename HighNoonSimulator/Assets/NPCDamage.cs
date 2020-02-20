@@ -23,6 +23,7 @@ public class NPCDamage : MonoBehaviour
             player.SetBool("Running", false);
             player.SetBool("Idle", false);
             Destroy(gameObject, 2);
+            GetComponent<AIController>().enabled = false;
             //GameEvents.current.death();
         }
     }

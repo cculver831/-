@@ -8,21 +8,25 @@ tree("Patrol")
 		while not IsHealthLessThan(5)
 			fallback
 				tree("Attack")
+				tree("LookAround")
 				tree("Roam")
-				sequence
-					Stop(90.0)
-					Stop(-90.0)
-					Stop(145.0)
-					Stop(-27.0)
-				Wait(2)
+				
+
 tree("Attack")
 	while not dead
-		sequence
-			seePlayer
-			TargetPlayer
-			LookAtTarget
-			Wait(0.5)
-			Fire
+		while seePlayer
+			sequence
+				TargetPlayer
+				LookAtTarget
+				fallback
+					while ShotLinedUp
+						sequence
+							Wait(0.5)
+							Fire
+					while not ShotLinedUp
+						sequence
+							SetTargetDestination
+							MoveToDestination
 
 tree("Flee")
 	sequence
@@ -39,3 +43,17 @@ tree("Roam")
 				PickDestination
 				MoveToDestination
 		
+tree("LookAround")
+		while not seePlayer
+			while not dead
+				sequence
+					random 
+						Stop(90.0)
+						Stop(-90.0)
+						Stop(145.0)
+						Stop(-27.0)
+					LookAtTarget
+					WaitRandom(0.5, 2.0)
+					random
+						Fail
+						Succeed

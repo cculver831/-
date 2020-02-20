@@ -27,7 +27,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0, z: 0}
-  rotSpeed: 5
+  rotSpeed: 25
   revovler: {fileID: 0}
   alive: 1
   Damage: 5
@@ -43,6 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb25e40493751f47bf95dfb0aec8a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHealth: 10
 --- !u!195 &1335943517273924760
 NavMeshAgent:
   m_ObjectHideFlags: 0
