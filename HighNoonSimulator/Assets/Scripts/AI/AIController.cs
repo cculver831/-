@@ -11,12 +11,17 @@ public class AIController : MonoBehaviour
     private Transform player;
     private Vector3 Target; //Where to aim
     public Vector3 destination; //Where to go
+    //navmesh used by enemy agent
     NavMeshAgent agent;
+    //Rotation speed of enemy
     [Range(1, 100)]
     public float rotSpeed = 25;
+    //Enemy Sight
     float VisualRange = 40.0f;
     float visAngle = 90.0f;
     private float shootdistance = 30f;
+
+    //References to enemy Components
     public GameObject revovler;
     private Animator Player;
     private Vector3 closestHealth;
@@ -26,11 +31,11 @@ public class AIController : MonoBehaviour
 
     public RaycastHit Shot;
 
-    // Start is called before the first frame update
+    //Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-      //  player= GameObject.FindWithTag("Player").GetComponent<Transform>().transform;
+      //player= GameObject.FindWithTag("Player").GetComponent<Transform>().transform;
         
     }
     private void Update()
@@ -53,16 +58,17 @@ public class AIController : MonoBehaviour
         }
     }
     //Checks if AI can 'see' player
-    // Raycasts to see if a wall is separting player from AI and checks if player is in VisualRange
+    //Raycasts to see if a wall is separting player from AI and checks if player is in VisualRange
     [Task]
     bool seePlayer()
     {
         Vector3 distance = player.transform.position - transform.position;
+        float angle = Vector3.Angle(distance, transform.forward);
         RaycastHit hit;
         bool seeWall = false;
 
         Debug.DrawRay(revovler.transform.position, distance, Color.red);
-
+        //shoots raycast in forward direction to see if a player is in sight of enemy
         if(Physics.Raycast(revovler.transform.position, distance, out hit))
         {
             if(hit.collider.gameObject.tag != "Player")
@@ -74,7 +80,8 @@ public class AIController : MonoBehaviour
                 Task.current.debugInfo = string.Format("wall {0}", seeWall);
             }
         }
-        if(distance.magnitude < VisualRange && !seeWall)
+        //Checks is enemy can see player, checks for distance, angle and walls
+        if(distance.magnitude < VisualRange && angle < visAngle && !seeWall)
         {
             return true;
         }
@@ -97,7 +104,7 @@ public class AIController : MonoBehaviour
     {
         Vector3 direction = Target - transform.position;
 
-        // Rotates facing the player
+        //Rotates facing the player
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotSpeed);
         if (Task.isInspected)
             Task.current.debugInfo = string.Format("angle={0}", Vector3.Angle(transform.forward, direction));
@@ -145,8 +152,6 @@ public class AIController : MonoBehaviour
     {
         var gunSound = GetComponentInChildren<AudioSource>();
         gunSound.Play();
-        //GetComponentInChildren<Animation>().Play("Revolver fire");
-
 
         RaycastHit Hit;
         if (Physics.Raycast(revovler.transform.position, revovler.transform.forward, out Hit))
@@ -176,6 +181,7 @@ public class AIController : MonoBehaviour
         }
         Task.current.Succeed();
     }
+    //Picks a random location to patrol
     [Task]
     public void PickDestination()
     {
@@ -186,6 +192,11 @@ public class AIController : MonoBehaviour
         Player.SetBool("Running", true);
        
         Task.current.Succeed();
+    }
+    [Task]
+    public void lookFoward()
+    {
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.forward), Time.deltaTime * rotSpeed);
     }
     //Checks Health
     [Task]
@@ -210,6 +221,7 @@ public class AIController : MonoBehaviour
         Task.current.Succeed();
     }
 
+    //Allows AI to run to nearest health pack
     [Task]
     public void FindHealth()
     {
@@ -231,6 +243,7 @@ public class AIController : MonoBehaviour
         Task.current.Succeed();
         
     }
+    //Heals AI after health pack is found
     [Task]
     public void Heal()
     {
