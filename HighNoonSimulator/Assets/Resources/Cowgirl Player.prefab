@@ -154,6 +154,8 @@ MonoBehaviour:
   DeathCam: {fileID: 259894010}
   Cam: {fileID: 4947143796997769752}
   Health: {fileID: 6390831731734934286}
+  levelTrans: {fileID: 5816231285920753657, guid: 9f6cfeab03823a7419b7f4236316f315,
+    type: 3}
 --- !u!114 &1864728055363397352
 MonoBehaviour:
   m_ObjectHideFlags: 0

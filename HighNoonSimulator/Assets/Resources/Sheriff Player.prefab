@@ -229,6 +229,8 @@ MonoBehaviour:
   DeathCam: {fileID: 1777303583}
   Cam: {fileID: 7210155591510424578}
   Health: {fileID: 4860404415655178747}
+  levelTrans: {fileID: 5816231285920753657, guid: 9f6cfeab03823a7419b7f4236316f315,
+    type: 3}
 --- !u!114 &6759372746062592537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,11 +525,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 95474626191974340, guid: 15a550206f811c346b37f3a3f4495178,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a7b2c2e0180fed7409ec651625403d29, type: 2}
     - target: {fileID: 4457282994381246, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.3687873
@@ -572,6 +569,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95474626191974340, guid: 15a550206f811c346b37f3a3f4495178,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a7b2c2e0180fed7409ec651625403d29, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a550206f811c346b37f3a3f4495178, type: 3}
 --- !u!1 &814381666086661398 stripped

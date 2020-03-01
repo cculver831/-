@@ -181,6 +181,8 @@ MonoBehaviour:
   DeathCam: {fileID: 1693913275}
   Cam: {fileID: 3986520935604533118}
   Health: {fileID: 4967029193710702464}
+  levelTrans: {fileID: 5816231285920753657, guid: 9f6cfeab03823a7419b7f4236316f315,
+    type: 3}
 --- !u!114 &5028002527580006841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -410,6 +412,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8016811912649975217, guid: 418c589e199d17d418a45bbd7f4ea009,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7283421699359769830, guid: 418c589e199d17d418a45bbd7f4ea009,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -470,6 +477,11 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 6349178600601819621}
+    - target: {fileID: 4721271752844526729, guid: 418c589e199d17d418a45bbd7f4ea009,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8391835568939278646, guid: 418c589e199d17d418a45bbd7f4ea009,
         type: 3}
       propertyPath: Ammo

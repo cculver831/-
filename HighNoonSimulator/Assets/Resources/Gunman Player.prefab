@@ -247,6 +247,8 @@ MonoBehaviour:
   DeathCam: {fileID: 1128562238}
   Cam: {fileID: 8016811912649975217, guid: 418c589e199d17d418a45bbd7f4ea009, type: 3}
   Health: {fileID: 8403617584080522667}
+  levelTrans: {fileID: 5816231285920753657, guid: 9f6cfeab03823a7419b7f4236316f315,
+    type: 3}
 --- !u!1001 &3088671457896776513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -262,6 +264,11 @@ PrefabInstance:
     - target: {fileID: 5070297668094978806, guid: 418c589e199d17d418a45bbd7f4ea009,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016811912649975217, guid: 418c589e199d17d418a45bbd7f4ea009,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7283421699359769830, guid: 418c589e199d17d418a45bbd7f4ea009,
@@ -324,6 +331,11 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 5776202439409139371}
+    - target: {fileID: 4721271752844526729, guid: 418c589e199d17d418a45bbd7f4ea009,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8391835568939278646, guid: 418c589e199d17d418a45bbd7f4ea009,
         type: 3}
       propertyPath: Score

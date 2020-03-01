@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Health
   - Ammo
+  - Transition
+  - GameManager
   layers:
   - Default
   - TransparentFX

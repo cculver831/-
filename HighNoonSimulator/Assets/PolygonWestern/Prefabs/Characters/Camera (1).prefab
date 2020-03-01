@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7283421699359769830
 Transform:
   m_ObjectHideFlags: 0
@@ -262,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Score: {fileID: 0}
   Ammo: {fileID: 0}
+  kills: 0
   Damage: 5
   fireRate: 0.25
   weaponRange: 50

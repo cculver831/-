@@ -30,6 +30,6 @@ public class NPCDamage : MonoBehaviour
     public void DeductPoints(int Damage)
     {
         enemyHealth -= Damage;
-        Debug.Log(enemyHealth);
+       //Debug.Log(enemyHealth);
     }
 }
