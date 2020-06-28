@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<div class="versionHeader">
-			<p class="versionText">Version: <b>1.20p05</b> </p>
+			<p class="versionText">Version: <b>1.22p05</b> </p>
 		</div>
 		<div class="leftContent">
 			<div class="leftContentInner">
@@ -249,7 +249,55 @@
         </br>
         </br>The beta version is incremented with every change related to the current beta generation (includes bug fixes, new features or changes to the manual). Beta versions are watermarked as "beta" in the Clip Editor and are not available via the Asset Store.</td>
     </tr>
-</table></br></br><h2 class="headline2" id="">UMotion V1.20p05</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+</table></br></br><h2 class="headline2" id="">UMotion V1.22p05</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Fixed an exception that is thrown by the undo/redo system under certian circumstances.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.22p04</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">In case UMotion can't find Unity's main window, it uses the screen resolution to center dialog windows now.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.22p03</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Fixed a null reference exception that appears in Unity 2018.4 when the "Unity Recorder" package is installed, a clip is selected in Unity Timeline and "Sync" is clicked in the Clip Editor.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.22p02</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Fixed that clicking on the remove all animation layers button doesn't remove the keys of those layers. Creating a new animation layer afterwards thus contains the old keys.</span></li>
+    <li class="listItem"><span class="listText">Fixed that when adding an animation clip to the import dialog and more than 10 transforms of that animation clip do not exist in this project, the clip can not be imported.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.22p01</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Selecting bones/transforms isn't possible when Pro Builder is not in object selection mode. As a consequence, UMotion now automatically sets Pro Builder into object selection mode whenever a UMotion bone is selected.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.22</h2><h3 class="headline3" id="">New or Changed Features</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Holding <span class="keyboardKey">Alt</span> while clicking on a constraint's foldout arrow (in Config Mode) now folds/unfolds all constraints.</span></li>
+    <li class="listItem"><span class="listText">The name of a "Custom Property Constraint" is now used as its title in the Config Mode constraint panel. This makes it easier to seek for custom properties even when they are folded.</span></li>
+    <li class="listItem"><span class="listText">It is now possible to assign the value of a setting of a "Custom Property Constraint" to all currently selected custom properties (in Config Mode).</span></li>
+    <li class="listItem"><span class="listText">"Custom Properties" are now automatically folded in the Config Mode constraint panel. This increases performance when huge number of custom properties are used.</span></li>
+</ul><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Fixed that the "Custom Property" constraint setup isn't displayed correctly in the Pose Editor when the Pose Editor's vertical scroll bar is visible.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Added a hint to the "Config Mod / Configuration" chapter describing how to fold/unfold all constraints at once.</span></li>
+    <li class="listItem"><span class="listText">Added a hint to the "Custom Property" chapter regarding mass apply of settings.</span></li>
+</ul></br></br><h2 class="headline2" id="">UMotion V1.21p01</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Fixed that switching the animation layer samples the current pose incorrectly if the animation contains a custom property in controller mode.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.21</h2><h3 class="headline3" id="">New or Changed Features</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Changing the framerate of an animation clip doesn't automatically scale the keys/events anymore (this gives the user more flexibility/choices). Keys/events can be manually scaled using the box tool in the dopesheet view.</span></li>
+    <li class="listItem"><span class="listText">When creating a new layer, the layer name text field is now automatically selected.</span></li>
+    <li class="listItem"><span class="listText">A new button was added to the playback navigation that allows toggling the playback stop behavior (i.e. return frame cursor to start or keep current position).</span></li>
+    <li class="listItem"><span class="listText">Changed default shortcut of "Focus Camera" to <span class="keyboardKey">F</span> (same is in Unity).</span></li>
+    <li class="listItem"><span class="listText">When no UMotion project is loaded, an info message is now shown that indicates that a project can be opened via the "File" menu.</span></li>
+    <li class="listItem"><span class="listText">The animation layers are now accessible via the UMotion API. This makes it easy to write a custom script that exports the same animation clip several times with different animation layers being active.</span></li>
+</ul><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Fixed that the shortcuts of the playback settings add their changes to the undo stack while pressing the corresponding UI button don't.</span></li>
+    <li class="listItem"><span class="listText">Fixed that *.FBX export only works correctly when the base layer is selected.</span></li>
+    <li class="listItem"><span class="listText">Fixed that assigning a GameObject to the Pose Editor while in prefab mode is not prevented.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Updated the "Clip Editor/Main Navigation/Clip Settings" chapter related to the changed framerate editing behavior.</span></li>
+    <li class="listItem"><span class="listText">Updated the "Clip Editor/Playback Navigation" chapter based on the new button that has been added to the playback navigation area.</span></li>
+    <li class="listItem"><span class="listText">Updated the "UMotion API" chapter based on the added functionalities.</span></li>
+</ul></br></br><h2 class="headline2" id="">UMotion V1.20p08</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Fixed that animation curves of a generic animation where the left tangent of the first key or the right tangent of the last key is set to "weighted" isn't played by Unity's animation system.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.20p07</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Regression: Fixed that moving the frame cursor (green arrow) directly after playback stopped (due to reaching the end) doesn't update the pose of the character.</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.20p06</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
+    <li class="listItem"><span class="listText">Fixed that the "toggle IK Pinning" shortcut (<span class="keyboardKey">I</span>) isn't disabled in additive animation layers.</span></li>
+    <li class="listItem"><span class="listText">Fixed that "Auto Key" and "IK Pinning" doesn't work after animation playback finished due to reaching the end (and not moving the frame cursor in the meantime).</span></li>
+    <li class="listItem"><span class="listText">Fixed that undoing the creation of a rotation key in an additive layer causes the pose to be sampled incorrectly when switing back to the base layer.</span></li>
+    <li class="listItem"><span class="listText">Fixed that restarting UMotion while any script in the current Unity project has a syntax/compilation error keeps the "Reloading Assemblies" dialog opened.</span></li>
+    <li class="listItem"><span class="listText">Fixed that sometimes an error message "Unable to resolve reference " is displayed when importing UMotion for the first time (or in some cases when starting Unity).</span></li>
+</ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.20p05</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
     <li class="listItem"><span class="listText">Fixed that curve of the CustomPropertyConstraint in "Animator Paramameter" mode isn't exported with normalized frame times when exporting as *.FBX.</span></li>
 </ul><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">None</p></br></br><h2 class="headline2" id="">UMotion V1.20p04</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">None</p><h3 class="headline3" id="">Bug Fixes</h3><ul class="listMain">
     <li class="listItem"><span class="listText">Fixed that the CustomPropertyConstraint doesn't preview animated material properties.</span></li>
@@ -981,7 +1029,7 @@
     <li class="listItem"><span class="listText">Added Issue 06 to the Known Issues list.</span></li>
 </ul></br></br><h2 class="headline2" id="">UMotion V1.00</h2><h3 class="headline3" id="">New or Changed Features</h3><p class="textBlock">Initial version</p><h3 class="headline3" id="">Bug Fixes</h3><p class="textBlock">Initial version</p><h3 class="headline3" id="">Manual Changes</h3><p class="textBlock">Initial version</p>
 				<div class="mainContentFooter">
-					<p class="textBlock" style="float:left">Copyright © 2017 - 2019 Soxware Interactive ALL RIGHTS RESERVED</p>
+					<p class="textBlock" style="float:left">Copyright © 2017 - 2020 Soxware Interactive ALL RIGHTS RESERVED</p>
 					<p class="textBlock" align="right"><a href="https://forum.unity.com/threads/new-umotion-animation-editor-released.490618/" class="link">Unity Forum Thread</a> | <a href="https://www.facebook.com/Soxware/" class="link">Facebook</a> | <a href="https://twitter.com/SoxwareInteract" class="link">Twitter</a> | <a href="https://www.youtube.com/channel/UCCuE6nI5gHvUQjx0lo6Twtg" class="link">Youtube</a></p>
 				</div>
 			</div>

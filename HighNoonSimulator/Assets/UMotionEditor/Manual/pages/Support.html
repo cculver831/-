@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<div class="versionHeader">
-			<p class="versionText">Version: <b>1.20p05</b> </p>
+			<p class="versionText">Version: <b>1.22p05</b> </p>
 		</div>
 		<div class="leftContent">
 			<div class="leftContentInner">
@@ -238,7 +238,7 @@ UMotion sets generic bones to be invisible by default as usually when dealing wi
 You may notice that changing the visibility for "twist" bones is not possible. This is due to the fact that Unity's animation system does not support animating generic bones that are within the human skeleton (= if the generic bones have a humanoid bone as child). Consider switching to the generic animation type in that case.</p></br><h3 class="headline3" id="">Q: The shortcuts of UMotion sometimes don't work. Is this a bug?</h3><p class="textBlock"><b>A:</b> Probably not. Make sure that either the <b>Clip Editor</b>, <b>Pose Editor</b> or any <b>Scene View</b> has input focus when a shortcut is pressed. Shortcuts are also disabled when the Scene View is in Flythrough Mode (i.e. when the right mouse button is pressed).
 </br>If it's a specific shortcut that is not working, try to bind the shortcut to a different key. Some shortcuts already used by Unity don't work correctly: <a href="https://docs.unity3d.com/Manual/UnityHotkeys.html" class="link">Unity Manual - Hotkeys</a></p></br><h3 class="headline3" id="">Q: I've added a rotation key, but when playing the animation the bone is rotating in the wrong direction. Why?</h3><p class="textBlock"><b>A:</b> A rotation between two key frames always uses the shortest path. If your expected rotation would rotate more than 180 degrees, it will rotate the other (shorter) way around instead. Add an additional key in between so that the total amount of rotation between two keys is always smaller than 180 degrees.</p>
 				<div class="mainContentFooter">
-					<p class="textBlock" style="float:left">Copyright © 2017 - 2019 Soxware Interactive ALL RIGHTS RESERVED</p>
+					<p class="textBlock" style="float:left">Copyright © 2017 - 2020 Soxware Interactive ALL RIGHTS RESERVED</p>
 					<p class="textBlock" align="right"><a href="https://forum.unity.com/threads/new-umotion-animation-editor-released.490618/" class="link">Unity Forum Thread</a> | <a href="https://www.facebook.com/Soxware/" class="link">Facebook</a> | <a href="https://twitter.com/SoxwareInteract" class="link">Twitter</a> | <a href="https://www.youtube.com/channel/UCCuE6nI5gHvUQjx0lo6Twtg" class="link">Youtube</a></p>
 				</div>
 			</div>

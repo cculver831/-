@@ -18,7 +18,7 @@
 			</div>
 		</div>
 		<div class="versionHeader">
-			<p class="versionText">Version: <b>1.20p05</b> </p>
+			<p class="versionText">Version: <b>1.22p05</b> </p>
 		</div>
 		<div class="leftContent">
 			<div class="leftContentInner">
@@ -274,12 +274,32 @@ There are two classes within this namespace:</p><ul class="listMain">
         </br>Selects (opens) the clip in the clip editor. The clip must already exist in the current UMotion project.
     </span></li>
     <li class="listItem"><span class="listText">
+        <b>static void SetClipName(string oldName, string newName)</b>
+        </br>Changes the name of an animation clip. When called right before "ExportCurrentClip()" this method can be used to change the name of the exported animation clip. This is useful when exporting the same animation clip several times (with different animation layers enabled).
+    </span></li>
+    <li class="listItem"><span class="listText">
         <b>static void ExportCurrentClip()</b>
-        </br>Exports the clip currently opened in the Clip Editor.
+        </br>Exports the clip currently opened in the Clip Editor. This method blocks until the export is finished.
     </span></li>
     <li class="listItem"><span class="listText">
         <b>static void ExportAllClips()</b>
-        </br>Exports all clips of the current loaded UMotion project.
+        </br>Exports all clips of the current loaded UMotion project. This method blocks until the export is finished.
+    </span></li>
+    <li class="listItem"><span class="listText">
+        <b>static string[] GetClipLayerNames()</b>
+        </br>Returns an array that holds the names of all animation layers of the currently opened animation clip. The base layer is not included.
+    </span></li>
+    <li class="listItem"><span class="listText">
+        <b>static void SetClipLayerName(string oldName, string newName)</b>
+        </br>Changes the name of an animaton layer of the currently opened animation clip.
+    </span></li>
+    <li class="listItem"><span class="listText">
+        <b>static void GetClipLayerBlendProperties(string layerName, out bool mute, out float blendWeight)</b>
+        </br>Gets the blend properties (mute and blend weight 0-1) of the layer with the given name.
+    </span></li>
+    <li class="listItem"><span class="listText">
+        <b>static void SetClipLayerBlendProperties(string layerName, bool mute, float blendWeight)</b>
+        </br>Sets the blend properties (mute and blend weight 0-1) of the layer with the given layer name. This method is useful for exporting an animation clip several times with different layers muted/unmuted.
     </span></li>
 </ul><h2 class="headline2" id="">PoseEditor Overview</h2><h3 class="headline3" id="">Properties</h3><ul class="listMain">
     <li class="listItem"><span class="listText">
@@ -310,7 +330,7 @@ There are two classes within this namespace:</p><ul class="listMain">
     </span></li>
 </ul>
 				<div class="mainContentFooter">
-					<p class="textBlock" style="float:left">Copyright © 2017 - 2019 Soxware Interactive ALL RIGHTS RESERVED</p>
+					<p class="textBlock" style="float:left">Copyright © 2017 - 2020 Soxware Interactive ALL RIGHTS RESERVED</p>
 					<p class="textBlock" align="right"><a href="https://forum.unity.com/threads/new-umotion-animation-editor-released.490618/" class="link">Unity Forum Thread</a> | <a href="https://www.facebook.com/Soxware/" class="link">Facebook</a> | <a href="https://twitter.com/SoxwareInteract" class="link">Twitter</a> | <a href="https://www.youtube.com/channel/UCCuE6nI5gHvUQjx0lo6Twtg" class="link">Youtube</a></p>
 				</div>
 			</div>

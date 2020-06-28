@@ -11827,4 +11827,6 @@ MonoBehaviour:
         valueInternal: 1
       PlayFromBeginning:
         valueInternal: 0
+      StopReturnToStart:
+        valueInternal: 1
     EventList: []

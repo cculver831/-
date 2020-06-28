@@ -6,6 +6,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine.SceneManagement;
 
+//This script accounts for damage the player has taken
 public class PlayerDamage : MonoBehaviourPunCallbacks
 {
     private Animator PlayerAnim;
@@ -35,7 +36,7 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
     }
     public void death()
     {
-        
+        //Changes the animations of the player (There's gotta be a better way to do this)
         PlayerAnim.SetBool("Idle", false);
         PlayerAnim.SetBool("Running", false);
         PlayerAnim.SetBool("Dying", true);
