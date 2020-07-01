@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using Panda;
 
 public class AIController : MonoBehaviour
 {
@@ -44,7 +43,7 @@ public class AIController : MonoBehaviour
         Player = GetComponent<Animator>();
     }
     //Checks if player is dead or not
-    [Task]
+
     bool dead()
     {
        if( GetComponent<NPCDamage>().enemyHealth <= 0)
@@ -59,7 +58,7 @@ public class AIController : MonoBehaviour
     }
     //Checks if AI can 'see' player
     //Raycasts to see if a wall is separting player from AI and checks if player is in VisualRange
-    [Task]
+
     bool seePlayer()
     {
         Vector3 distance = player.transform.position - transform.position;
@@ -75,9 +74,9 @@ public class AIController : MonoBehaviour
             {
                 seeWall = true;
             }
-         if(Task.isInspected)
+
             {
-                Task.current.debugInfo = string.Format("wall {0}", seeWall);
+
             }
         }
         //Checks is enemy can see player, checks for distance, angle and walls
@@ -92,31 +91,30 @@ public class AIController : MonoBehaviour
 
     }
     //Targets players location
-    [Task]
+
     public void TargetPlayer()
     {
         Target = player.transform.position;
-        Task.current.Succeed();
+
     }
     //Makes AI face the player
-    [Task]
+
     public void LookAtTarget()
     {
         Vector3 direction = Target - transform.position;
 
         //Rotates facing the player
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotSpeed);
-        if (Task.isInspected)
-            Task.current.debugInfo = string.Format("angle={0}", Vector3.Angle(transform.forward, direction));
+
 
         if(Vector3.Angle(transform.forward, direction) < 5.0f)
         {
-            Task.current.Succeed();
+ 
         }
     }
 
     //Lines up Shot for AI
-    [Task]
+
     public bool ShotLinedUp()
     {
         Vector3 distance = Target - transform.position;
@@ -130,15 +128,15 @@ public class AIController : MonoBehaviour
         }
 
     }
-    [Task]
+
     public void SetTargetDestination()
     {
         agent.SetDestination(Target);
         Player.SetBool("Running", true);
-        Task.current.Succeed();
+
     }
     //Stop AI from moving to aim
-    [Task]
+
     public bool Stop(float angle)
     {
         //Make enemy look around for player
@@ -147,7 +145,7 @@ public class AIController : MonoBehaviour
         return true;
     }
     //Shoots at player
-    [Task]
+
     public void Fire()
     {
         var gunSound = GetComponentInChildren<AudioSource>();
@@ -179,10 +177,10 @@ public class AIController : MonoBehaviour
             }
             Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
         }
-        Task.current.Succeed();
+
     }
     //Picks a random location to patrol
-    [Task]
+
     public void PickDestination()
     {
         //Pick location to go to
@@ -191,15 +189,15 @@ public class AIController : MonoBehaviour
         agent.SetDestination(dest);
         Player.SetBool("Running", true);
        
-        Task.current.Succeed();
+
     }
-    [Task]
+
     public void lookFoward()
     {
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(transform.forward), Time.deltaTime * rotSpeed);
     }
     //Checks Health
-    [Task]
+
     public bool IsHealthLessThan(int x)
     {
         if (GetComponent<NPCDamage>().enemyHealth <= x)
@@ -212,17 +210,17 @@ public class AIController : MonoBehaviour
         }
     }
     //Checks if Danger is imminent
-    [Task]
+
     public void TakeCover()
     {
         Vector3 awayFromPlayer = transform.position - player.transform.position;
         Vector3 dest = transform.position + awayFromPlayer * 2;
         agent.SetDestination(dest);
-        Task.current.Succeed();
+
     }
 
     //Allows AI to run to nearest health pack
-    [Task]
+
     public void FindHealth()
     {
         
@@ -240,11 +238,11 @@ public class AIController : MonoBehaviour
                 awayFromHealth = currDistance;
             }
         }
-        Task.current.Succeed();
+
         
     }
     //Heals AI after health pack is found
-    [Task]
+
     public void Heal()
     {
        
@@ -257,22 +255,20 @@ public class AIController : MonoBehaviour
             Player.SetBool("Running", false);
             Player.SetBool("Idle", true);
             GetComponent<NPCDamage>().enemyHealth = 10;
-            Task.current.Succeed();
+
         }
     }
     //Moves AI to random Destination
-    [Task]
+
     public void MoveToDestination()
     {
         //Debugging
-        if (Task.isInspected)
-            Task.current.debugInfo = string.Format("t = ", Time.time);
+
         //Checks distance from Random point
         if(agent.remainingDistance <= agent.stoppingDistance && !agent.pathPending)
         {
             Player.SetBool("Running", false);
-            Player.SetBool("Idle", true);
-            Task.current.Succeed();
+
         }
     }
 
