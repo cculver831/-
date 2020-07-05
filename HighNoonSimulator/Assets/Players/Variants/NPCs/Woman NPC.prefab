@@ -23,19 +23,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 6069457499266067261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17e43e7170fb45b4b81dcd16d0ff55d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 498b138caedb8a04584a2e2fcfa69380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scripts:
-  - {fileID: 4900000, guid: cd95718f73cf9f94c9ff082206f4bab5, type: 3}
-  autoReset: 1
-  tickOn: 0
-  sourceInfos:
-  - isFoldout: 0
-    breakPoints: 
-    breakPointStatuses: 
-    collapsedLines: 
-    btScript: 
+  actions: []
+  currentAction: {fileID: 0}
+  AudioFilesSearching: []
+  AudioFilesDamage: []
+  Enemyobj: {fileID: 0}
+  Text: {fileID: 0}
+  fullHealth: 50
+  CurrentHealth: 50
+  agent: {fileID: 0}
+  lastLocation: {fileID: 0}
+  drop: {fileID: 0}
+  target: {fileID: 0}
+  doOnceDead: 1
 --- !u!195 &-7586728278180350917
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -58,36 +61,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1708278600726605205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069457499266067261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ab2beb1c4c88314faa3b5d3f1f4548c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0, z: 0}
-  rotSpeed: 25
-  revovler: {fileID: 8112802480782183213}
-  alive: 1
-  Damage: 5
---- !u!114 &3027719597011256334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6069457499266067261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bb25e40493751f47bf95dfb0aec8a34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyHealth: 10
 --- !u!1 &8112802480782183213
 GameObject:
   m_ObjectHideFlags: 0

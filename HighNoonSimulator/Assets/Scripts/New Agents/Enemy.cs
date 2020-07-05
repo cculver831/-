@@ -23,12 +23,13 @@ public class Enemy : GAgent
    //gameobject we use to "track" player movement
     public GameObject lastLocation;
     public GameObject drop; //Ammo drop
-
+    public WalkSpeeds settings;
 
     
     new void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        GetComponent<NavMeshAgent>().speed = settings.speed;
         // Call the base start
         base.Start();
         // Set up the subgoal "isWaiting"
@@ -78,7 +79,7 @@ public class Enemy : GAgent
         {
             beliefs.RemoveState("SeesPlayer");
             beliefs.AddStateOnce("Doesn'tSeePlayer", 0);
-            Text.SetActive(false);
+            //Text.SetActive(false);
         }
 
     }
@@ -138,7 +139,7 @@ public class Enemy : GAgent
     }
     void ShowText()
     {
-            Text.SetActive(true);
+            //Text.SetActive(true);
             //Debug.Log("Showing Text");
 
     }

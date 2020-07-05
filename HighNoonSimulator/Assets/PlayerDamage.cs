@@ -31,7 +31,8 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
         Health.text = enemyHealth + "HP";
         if (enemyHealth <= 0)
         {
-            death();
+            // death();
+            Debug.Log("I'm dead :/ ");
         }
     }
     public void death()
