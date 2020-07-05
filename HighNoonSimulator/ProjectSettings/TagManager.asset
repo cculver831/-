@@ -9,6 +9,8 @@ TagManager:
   - Ammo
   - Transition
   - GameManager
+  - Cover
+  - Weapon
   layers:
   - Default
   - TransparentFX

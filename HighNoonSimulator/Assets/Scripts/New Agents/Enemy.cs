@@ -120,7 +120,7 @@ public class Enemy : GAgent
                     transform.rotation = Quaternion.LookRotation(newDirection);
                     ShowText();
                 }
-                lastLocation.transform.position = target.transform.position;
+                //lastLocation.transform.position = target.transform.position;
             
                 //end of enemy Rotate
 
@@ -174,7 +174,7 @@ public class Enemy : GAgent
         audioData = GetComponent<AudioSource>(); //Use audio source
         audioData.clip = GetComponent<Enemy>().AudioFilesDamage[Random.Range(0, AudioFilesDamage.Length)]; // play random hit sound
         audioData.Play(); //play audio
-        lastLocation.transform.position = target.transform.position; //update last location player was in when enemy was hit
+        //lastLocation.transform.position = target.transform.position; //update last location player was in when enemy was hit
         CurrentHealth -= damage;
         if (CurrentHealth < (fullHealth/2)) //checks if enemy needs to heal
         {
