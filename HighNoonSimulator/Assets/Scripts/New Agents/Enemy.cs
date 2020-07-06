@@ -29,7 +29,7 @@ public class Enemy : GAgent
     new void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        GetComponent<NavMeshAgent>().speed = settings.speed;
+        //GetComponent<NavMeshAgent>().speed = settings.speed;
         // Call the base start
         base.Start();
         // Set up the subgoal "isWaiting"
@@ -46,6 +46,7 @@ public class Enemy : GAgent
         InvokeRepeating("ReturnBeliefs", 0.1f, 0.1f);
 
         agent = this.gameObject.GetComponent<NavMeshAgent>();
+        //GetComponent<NavMeshAgent>().Warp;
         beliefs.ModifyState("NotActivated", 0); //keeps enemy from active aggression (keeps passive until damage is taken
     }
 
@@ -79,7 +80,7 @@ public class Enemy : GAgent
         {
             beliefs.RemoveState("SeesPlayer");
             beliefs.AddStateOnce("Doesn'tSeePlayer", 0);
-            //Text.SetActive(false);
+            Text.SetActive(false);
         }
 
     }
@@ -121,7 +122,7 @@ public class Enemy : GAgent
                     transform.rotation = Quaternion.LookRotation(newDirection);
                     ShowText();
                 }
-                //lastLocation.transform.position = target.transform.position;
+                lastLocation.transform.position = target.transform.position;
             
                 //end of enemy Rotate
 
@@ -139,7 +140,7 @@ public class Enemy : GAgent
     }
     void ShowText()
     {
-            //Text.SetActive(true);
+            Text.SetActive(true);
             //Debug.Log("Showing Text");
 
     }
@@ -175,7 +176,7 @@ public class Enemy : GAgent
         audioData = GetComponent<AudioSource>(); //Use audio source
         audioData.clip = GetComponent<Enemy>().AudioFilesDamage[Random.Range(0, AudioFilesDamage.Length)]; // play random hit sound
         audioData.Play(); //play audio
-        //lastLocation.transform.position = target.transform.position; //update last location player was in when enemy was hit
+        lastLocation.transform.position = target.transform.position; //update last location player was in when enemy was hit
         CurrentHealth -= damage;
         if (CurrentHealth < (fullHealth/2)) //checks if enemy needs to heal
         {
