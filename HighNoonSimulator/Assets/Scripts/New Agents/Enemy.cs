@@ -15,7 +15,7 @@ public class Enemy : GAgent
     public  GameObject Text; 
     //setting melee range and health
     private float meleeRange = 4.0f;
-    public int fullHealth = 50;
+    private int fullHealth = 50;
     public int CurrentHealth = 50;
     //self reference
     public NavMeshAgent agent;
