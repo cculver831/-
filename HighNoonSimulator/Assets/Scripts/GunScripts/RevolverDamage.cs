@@ -12,31 +12,23 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     public Text Ammo;
    
     public int kills = 0;
-    //This script uses raycasting to detect and damage objects
-    public int Damage = 5;
-    public float fireRate = .25f;
-    public float weaponRange = 50f;
-    private float nextFire;
+
     public int ammo = 6;
-    private bool Fired;
-    public float x;
+
 
     //Pistol Script
-    //public GameObject bullet;
     public GameObject BulletSpawn;
     public float coolDownPeriodInSeconds = 0.5f;
     private float timeStamp;
     public List<GameObject> vfx = new List<GameObject>();
     private GameObject effectToSpawn;
 
-    public RaycastHit Shot;
-    private Camera fpsCam;
-    private WaitForSeconds shotDuration = new WaitForSeconds(0.7f);
+ 
     private void Start()
     {
         kills = 0;
         Score.text = "Score: " + kills;
-        fpsCam = GetComponentInParent<Camera>();
+        //fpsCam = GetComponentInParent<Camera>();
         effectToSpawn = vfx[0];
     }
 
@@ -53,7 +45,8 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     void Fire()
     {
 
-        if (Input.GetButtonDown("Fire1") && timeStamp <= Time.time && ammo >0)
+
+        if (Input.GetButtonDown("Fire1") && timeStamp <= Time.time)
         {
             var direction = transform.TransformDirection(Vector3.forward);
             RaycastHit hit;
@@ -67,12 +60,13 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
             GameObject vfx;
             vfx = Instantiate(effectToSpawn, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
             timeStamp = Time.time + coolDownPeriodInSeconds;
-            var gunSound = GetComponent<AudioSource>();
+        }
+        var gunSound = GetComponent<AudioSource>();
             gunSound.Play();
             GetComponent<Animation>().Play("Revolver fire");
             ammo = ammo - 1;
-        }
-     
+        timeStamp = Time.time + coolDownPeriodInSeconds;
+
     }
 
     public void reload()

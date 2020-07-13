@@ -34,9 +34,15 @@ public class Pistol : MonoBehaviour
                 // - send damage to object we hit - \\
                 hit.collider.SendMessageUpwards("TakeDamage", 15, SendMessageOptions.DontRequireReceiver);
             }
+            else
+            {
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.red);
+                // - send damage to object we hit - \\
+                //hit.collider.SendMessageUpwards("TakeDamage", 15, SendMessageOptions.DontRequireReceiver);
+            }
             GameObject vfx;
             vfx = Instantiate(effectToSpawn, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
-           // timeStamp = Time.time + coolDownPeriodInSeconds;
+           timeStamp = Time.time + coolDownPeriodInSeconds;
         }
     }
 }
