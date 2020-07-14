@@ -22,13 +22,13 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     private float timeStamp;
     public List<GameObject> vfx = new List<GameObject>();
     private GameObject effectToSpawn;
-
+    private Camera fpsCam;
  
     private void Start()
     {
         kills = 0;
-        Score.text = "Score: " + kills;
-        //fpsCam = GetComponentInParent<Camera>();
+        //Score.text = "Score: " + kills;
+        fpsCam = GetComponentInParent<Camera>();
         effectToSpawn = vfx[0];
     }
 
@@ -37,9 +37,9 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        Ammo.text = ammo + " - 0";
-        Fire();
-
+        //Ammo.text = ammo + " - 0";
+        // Fire();
+       Shoot();
     }
 
     void Fire()
@@ -74,40 +74,32 @@ public class RevolverDamage : MonoBehaviourPunCallbacks
         ammo = 6;
 
     }
-    //void Shoot()
-    //{
-        
-    //    RaycastHit Hit;
-    //    if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out Hit))
-    //    {
-    //        x = Hit.distance;
-    //        Debug.Log("Gun shot distance: " + Hit.distance);
-    //        if(Hit.transform.tag == "Enemy" )
-    //        {
- 
-    //            if (x > 20 )
-    //            {
-    //                Damage = 3;
+    void Shoot()
+    {
+        if (Input.GetButtonDown("Fire1") && timeStamp <= Time.time)
+        {
+            RaycastHit Hit;
+            if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out Hit))
+            {
+                // x = Hit.distance;
+                Debug.Log("Gun shot distance: " + Hit.distance);
+                //Score.text = "Score: " + kills;
+               // GameObject.FindWithTag("GameManager").GetComponent<GameManager>().Score = kills;
+               // PlayerPrefs.SetInt("HighScore", kills);
+                Hit.transform.SendMessage("TakeDamage", 25, SendMessageOptions.DontRequireReceiver);
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * Hit.distance, Color.cyan);
+                // Projectile
+                GameObject vfx;
+                vfx = Instantiate(effectToSpawn, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
+                timeStamp = Time.time + coolDownPeriodInSeconds;
 
-    //                kills += 5;
-    //            }
-    //            else if ( x <= 20 && x > 10)
-    //            {
-    //                Damage = 4;
+                //Audio 
+                var gunSound = GetComponent<AudioSource>();
+                gunSound.Play();
+                GetComponent<Animation>().Play("Revolver fire");
+            }
+        }
 
-    //                kills += 2;
-    //            }
-    //            else if (x <= 10)
-    //            {
-    //                Damage = 5;
-                 
-    //                kills += 1;
-    //            }
-    //        }
-    //        Score.text = "Score: " + kills;
-    //        GameObject.FindWithTag("GameManager").GetComponent<GameManager>().Score = kills;
-    //        PlayerPrefs.SetInt("HighScore", kills);
-    //        Hit.transform.SendMessage("DeductPoints", Damage, SendMessageOptions.DontRequireReceiver);
-    //    }
-    //}
+    }
 }
+

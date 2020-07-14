@@ -31,7 +31,8 @@ public class Spawning : MonoBehaviour
             yield return new WaitForSeconds(SpawnRate);
             spawnAmount++;
         }
-        SpawnRate = SpawnRate / 0.5f;
+
+
     }
     // Update is called once per frame
     void Update()

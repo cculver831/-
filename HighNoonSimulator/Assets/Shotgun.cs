@@ -16,8 +16,8 @@ public class Shotgun : MonoBehaviour
 
     private GameObject effectToSpawn;
 
-    float variance = 1.0f;
-    float distance = 10.0f;
+    //float variance = 1.0f;
+    //float distance = 10.0f;
     // Start is called before the first frame update
     void Awake()
     {
