@@ -24,8 +24,14 @@ public class Enemy : GAgent
     public GameObject lastLocation;
     public GameObject drop; //Ammo drop
     public WalkSpeeds settings;
+    public PlayerMovement pm;
 
-    
+    private void Awake()
+    {
+      
+        //target = pm.gameObject.transform;
+    }
+
     new void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -48,6 +54,8 @@ public class Enemy : GAgent
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         //GetComponent<NavMeshAgent>().Warp;
         beliefs.ModifyState("NotActivated", 0); //keeps enemy from active aggression (keeps passive until damage is taken
+
+        pm = Object.FindObjectOfType<PlayerMovement>();
     }
 
 
@@ -59,7 +67,10 @@ public class Enemy : GAgent
 
     void Update()
     {
-
+        if(pm)
+        {
+            Debug.Log("we have a macth!");
+        }
         EnemySight();
         //CheckHealth();
     }
