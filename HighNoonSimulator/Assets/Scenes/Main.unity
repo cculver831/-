@@ -27916,16 +27916,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4180210137991212926, guid: 1225d7eb868dde94f95ee87af33a41ae,
-        type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4180210139137651820, guid: 1225d7eb868dde94f95ee87af33a41ae,
         type: 3}
       propertyPath: wp
       value: 
       objectReference: {fileID: 560022509}
+    - target: {fileID: 4180210137991212926, guid: 1225d7eb868dde94f95ee87af33a41ae,
+        type: 3}
+      propertyPath: m_Speed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1225d7eb868dde94f95ee87af33a41ae, type: 3}
 --- !u!1 &742074620 stripped
@@ -51037,7 +51037,7 @@ PrefabInstance:
     - target: {fileID: 2819397131771356955, guid: 4402e7e1ddce83a448b78f8749064c8c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2825586160409863297, guid: 4402e7e1ddce83a448b78f8749064c8c,
         type: 3}
@@ -58208,11 +58208,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4180210137991212926, guid: 1225d7eb868dde94f95ee87af33a41ae,
-        type: 3}
-      propertyPath: m_Speed
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4180210139137651820, guid: 1225d7eb868dde94f95ee87af33a41ae,
         type: 3}
       propertyPath: wp
@@ -58222,6 +58217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180210137991212926, guid: 1225d7eb868dde94f95ee87af33a41ae,
+        type: 3}
+      propertyPath: m_Speed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1225d7eb868dde94f95ee87af33a41ae, type: 3}

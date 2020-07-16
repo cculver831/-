@@ -34,7 +34,7 @@ public class Enemy : GAgent
 
     new void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        
         //GetComponent<NavMeshAgent>().speed = settings.speed;
         // Call the base start
         base.Start();
@@ -54,8 +54,8 @@ public class Enemy : GAgent
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         //GetComponent<NavMeshAgent>().Warp;
         beliefs.ModifyState("NotActivated", 0); //keeps enemy from active aggression (keeps passive until damage is taken
-
-        pm = Object.FindObjectOfType<PlayerMovement>();
+        target = agent.transform;
+        
     }
 
 
@@ -64,12 +64,16 @@ public class Enemy : GAgent
     float visDist = 35.0f;
     float visAngle = 90.0f;
     float speed =15.0f;
-
+    bool Once = true;
     void Update()
     {
-        if(pm)
+        pm = Object.FindObjectOfType<PlayerMovement>();
+        if (pm && Once)
         {
+            
             Debug.Log("we have a macth!");
+            target = pm.transform;
+            Once = false;
         }
         EnemySight();
         //CheckHealth();
