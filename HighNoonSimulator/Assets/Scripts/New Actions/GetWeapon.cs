@@ -35,4 +35,13 @@ public class GetWeapon : GAction
        
         return true;
     }
+    private void Update()
+    {
+        if (beliefs.HasState("isinMeleeRange"))
+        {
+            finishEarly = true;
+
+        }
+
+    }
 }

@@ -28,7 +28,7 @@ public class PlayerDamage : MonoBehaviourPunCallbacks
     [PunRPC]
     void Update()
     {
-        Health.text = enemyHealth + "HP";
+       // Health.text = enemyHealth + "HP";
         if (enemyHealth <= 0)
         {
             // death();
