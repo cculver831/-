@@ -8,14 +8,14 @@ public class MeleeAttack : GAction
 
     public override bool PrePerform()
     {
-        GetComponent<Animator>().SetBool("Melee", true);
+        GetComponent<Animator>().SetBool("Melee", false);
         return true;
     }
 
     public override bool PostPerform()
     {
         Debug.Log("PUNCH!");
-        GetComponent<Animator>().SetBool("Melee", false);
+        GetComponent<Animator>().SetBool("Melee", true);
         return true;
     }
 }

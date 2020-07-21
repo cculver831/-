@@ -213,6 +213,7 @@ public class Enemy : GAgent
     //will be saved later to calculate score
     void Death()
     {
+        GetComponent<Animator>().SetBool("Dead", true);
         for ( int i = 0; i < Random.Range(1,3); i ++)
         {
             Instantiate(drop, transform.position + new Vector3(0.0f, 0.1f, 0.0f), Quaternion.identity);
