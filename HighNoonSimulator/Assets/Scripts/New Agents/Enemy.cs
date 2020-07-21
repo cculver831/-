@@ -24,17 +24,12 @@ public class Enemy : GAgent
     public GameObject lastLocation;
     public GameObject drop; //Ammo drop
     public WalkSpeeds settings;
-    public PlayerMovement pm;
+    private PlayerMovement pm;
 
-    private void Awake()
-    {
-      
-        //target = pm.gameObject.transform;
-    }
 
     new void Start()
     {
-        
+        EnemyManager.OnEnemyTriggerEnter += onEnemyTrigger;
         //GetComponent<NavMeshAgent>().speed = settings.speed;
         // Call the base start
         base.Start();
@@ -54,7 +49,7 @@ public class Enemy : GAgent
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         //GetComponent<NavMeshAgent>().Warp;
         beliefs.ModifyState("NotActivated", 0); //keeps enemy from active aggression (keeps passive until damage is taken
-        target = agent.transform;
+        target = agent.transform; // place holder so enemies won't crash
         
     }
 
@@ -176,12 +171,19 @@ public class Enemy : GAgent
         }
 
     }
+
+    private void onEnemyTrigger()
+    {
+        beliefs.AddStateOnce("activated",0);
+    }
     public bool doOnceDead = true;
     public void TakeDamage(int damage)
     {
         if(doOnce)
         {
             beliefs.ModifyState("activated", 0);
+            //Trigger event here
+            EnemyManager.OnEnemyTrigger();
             beliefs.RemoveState("NotActivated");
             doOnce = false;
         }
