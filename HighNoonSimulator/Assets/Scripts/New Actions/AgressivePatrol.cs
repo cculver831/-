@@ -12,7 +12,7 @@ public class AgressivePatrol : GAction
     }
         private void Update()
         {
-           if((beliefs.HasState("SeesPlayer") && running) || (beliefs.HasState("JustSawPlayer") && running))
+           if((beliefs.HasState("SeesPlayer") && running) || (beliefs.HasState("JustSawPlayer") && running) || (beliefs.HasState("isinMeleeRange") && running))
         {
             GetComponent<GAgent>().CompleteAction();
             //Debug.Log("Stopping from Agressive Patrol");

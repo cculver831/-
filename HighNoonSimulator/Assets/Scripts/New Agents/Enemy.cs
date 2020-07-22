@@ -50,6 +50,7 @@ public class Enemy : GAgent
         //GetComponent<NavMeshAgent>().Warp;
         beliefs.ModifyState("NotActivated", 0); //keeps enemy from active aggression (keeps passive until damage is taken
         target = agent.transform; // place holder so enemies won't crash
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         
     }
 
@@ -205,7 +206,7 @@ public class Enemy : GAgent
             Debug.Log("I should be dead right now");
             this.GetComponent<NavMeshAgent>().enabled = false;
             this.enabled = false;
-            
+            GetComponent<Animator>().SetBool("Dead", true);
             Invoke("Death", 3.0f);
             doOnceDead = false;
         }
@@ -215,7 +216,7 @@ public class Enemy : GAgent
     //will be saved later to calculate score
     void Death()
     {
-        GetComponent<Animator>().SetBool("Dead", true);
+        
         for ( int i = 0; i < Random.Range(1,3); i ++)
         {
             Instantiate(drop, transform.position + new Vector3(0.0f, 0.1f, 0.0f), Quaternion.identity);
