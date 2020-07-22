@@ -41,7 +41,9 @@ public class Enemy : GAgent
         goals.Add(s2, 1);
         SubGoal s3 = new SubGoal("KillPlayer", 3, false);
         goals.Add(s3, 5);
-
+        SubGoal s4 = new SubGoal("Armed", 4, true);
+        // Add it to the goals
+        goals.Add(s4, 6);
         SubGoal s5 = new SubGoal("Patrol", 4, false);
         goals.Add(s5, 5);
         InvokeRepeating("ReturnBeliefs", 0.1f, 0.1f);
@@ -128,7 +130,7 @@ public class Enemy : GAgent
                 Debug.DrawRay(transform.position, newDirection, Color.red);
 
                 // Calculate a rotation a step closer to the target and applies rotation to this object
-                if(beliefs.HasState("Aggressive")|| beliefs.HasState("activated")) // if activated, show exclaimation text
+                if(beliefs.HasState("Aggressive")) // if activated, show exclaimation text
                 {
                     transform.rotation = Quaternion.LookRotation(newDirection);
                     ShowText();
@@ -176,6 +178,7 @@ public class Enemy : GAgent
     private void onEnemyTrigger()
     {
         beliefs.AddStateOnce("activated",0);
+        beliefs.AddStateOnce("Aggressive", 0);
     }
     public bool doOnceDead = true;
     public void TakeDamage(int damage)

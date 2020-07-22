@@ -673,6 +673,31 @@ MonoBehaviour:
   coolDownPeriodInSeconds: 0.45
   vfx:
   - {fileID: 8023298143553404570, guid: c84df69ccc9c5714c9d8cd68a334e057, type: 3}
+--- !u!1 &360421800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9061232652006804397, guid: ed244c3341d1d2a44b38ff3227b8dbe7,
+    type: 3}
+  m_PrefabInstance: {fileID: 6892550370134378495}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &360421816
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360421800}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 4837235d67e136e4b883adb2bafc73e8, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1623204c8b8c1f148a020c7f89adfc3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &371692533
 GameObject:
   m_ObjectHideFlags: 0
@@ -4009,6 +4034,11 @@ PrefabInstance:
       propertyPath: wp
       value: 
       objectReference: {fileID: 810785496}
+    - target: {fileID: 5796480877931232085, guid: ed244c3341d1d2a44b38ff3227b8dbe7,
+        type: 3}
+      propertyPath: preConditions.Array.data[0].key
+      value: Aggressive
+      objectReference: {fileID: 0}
     - target: {fileID: 5796480877931232082, guid: ed244c3341d1d2a44b38ff3227b8dbe7,
         type: 3}
       propertyPath: lastLocation
@@ -4019,6 +4049,21 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1907645002}
+    - target: {fileID: 5796480878944559174, guid: ed244c3341d1d2a44b38ff3227b8dbe7,
+        type: 3}
+      propertyPath: m_Speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5796480877931232086, guid: ed244c3341d1d2a44b38ff3227b8dbe7,
+        type: 3}
+      propertyPath: afterEffects.Array.data[0].key
+      value: Armed
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357996011592353380, guid: ed244c3341d1d2a44b38ff3227b8dbe7,
+        type: 3}
+      propertyPath: preConditions.Array.data[2].key
+      value: Aggressive
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed244c3341d1d2a44b38ff3227b8dbe7, type: 3}
 --- !u!1001 &8349205357973425285
