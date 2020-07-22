@@ -39,7 +39,7 @@ public class GoToAmmo : GAction
         //beliefs.RemoveState("safe");
         beliefs.RemoveState("HasNoAmmo");
         beliefs.AddStateOnce("HasAmmo", 0);
-        GetComponent<ShootAtPlayer>().Ammo = 6;
+        GetComponent<ShootAtPlayer>().Ammo = 20;
         return true;
     }
 }

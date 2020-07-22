@@ -25,7 +25,7 @@ public class Enemy : GAgent
     public GameObject drop; //Ammo drop
     public WalkSpeeds settings;
     private PlayerMovement pm;
-
+    public Vector3 lastPos;
 
     new void Start()
     {
@@ -47,15 +47,13 @@ public class Enemy : GAgent
         SubGoal s5 = new SubGoal("Patrol", 4, false);
         goals.Add(s5, 5);
         InvokeRepeating("ReturnBeliefs", 0.1f, 0.1f);
-
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         //GetComponent<NavMeshAgent>().Warp;
         beliefs.ModifyState("NotActivated", 0); //keeps enemy from active aggression (keeps passive until damage is taken
         target = agent.transform; // place holder so enemies won't crash
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        
+        lastPos = transform.position;
     }
-
 
     //Variables for Enemy Vision
     public Transform target;
@@ -65,6 +63,8 @@ public class Enemy : GAgent
     bool Once = true;
     void Update()
     {
+        Moving();
+
         pm = Object.FindObjectOfType<PlayerMovement>();
         if (pm && Once)
         {
@@ -75,6 +75,24 @@ public class Enemy : GAgent
         }
         EnemySight();
         //CheckHealth();
+    }
+    void Moving()
+    {
+        Vector3 curPos;
+        Vector3 position = transform.position;
+        curPos = position;
+        if (curPos == lastPos)
+        {
+            GetComponent<Animator>().SetBool("Idle", true);
+            GetComponent<Animator>().SetBool("Moving", false);
+        }
+        else
+        {
+            Debug.Log("I should be walking");
+            GetComponent<Animator>().SetBool("Idle", false);
+            GetComponent<Animator>().SetBool("Moving", true);
+        }
+        lastPos = curPos;
     }
     //Enemy Senses that are updated every tenth of a second
     void ReturnBeliefs()

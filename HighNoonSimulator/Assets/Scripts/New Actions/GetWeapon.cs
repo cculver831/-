@@ -32,7 +32,7 @@ public class GetWeapon : GAction
         beliefs.RemoveState("activated");
         Debug.Log("Weapon acquired");
         inventory.AddItem(target);
-        GetComponent<Animator>().SetBool("Armed", true);
+
         return true;
     }
     private void Update()
